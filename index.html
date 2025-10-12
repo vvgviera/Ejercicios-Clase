@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codificación Medica - Test</title>
+  <link rel="stylesheet" href="style.css">
+	
+	
+<style>
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  height: 300vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+  background-color: #575757;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+</style>
+	
+</head>
+<body>
+	
+  <aside class="sidebar">
+	  
+        <h1>Codificación Medica - Test Multiples choices (2025)</h1>
+        <p>Visitas a esta página:</p>
+        <h2 id="visitCount">0</h2>
+        <p>veces</p>
+     <p>Contenido:</p> 
+    <ul>
+      <li onclick="cambiarContenido('pagina22.html')">Quiz Aleatorio: <h5>Incluye cuestionarios del 1 al 5</h5> </li>
+	<h5>Cuestionarios por Temática</h5>
+      <li onclick="cambiarContenido('pagina1.html')">1. The Business of Medicine</li>
+      <li onclick="cambiarContenido('pagina2.html')">2. Anatomy</li>
+      <li onclick="cambiarContenido('pagina3.html')">3. Medical Terminolgy</li>
+	  <li onclick="cambiarContenido('pagina4.html')">4. Introduction to ICD-10-CM</li>
+      <li onclick="cambiarContenido('pagina5.html')">5. ICD-10-CM Chapters 1-11</li>
+	  <li onclick="cambiarContenido('pagina6.html')">6. ICD-10-CM Chapters 12-22</li>
+	  <li onclick="cambiarContenido('pagina7.html')">7. Introduction to CPT Surgery Guidelines HCPCS and Modifiers</li>
+	  <li onclick="cambiarContenido('pagina8.html')">8. Integumentary System</li>
+	  <li onclick="cambiarContenido('pagina9.html')">9. Musculoskeletal System</li>
+      <li onclick="cambiarContenido('pagina10.html')">10. Respiratory Hemic Lymphatic Mediastinum Diaphragm</li>
+	  <li onclick="cambiarContenido('pagina11.html')">11. Cardiovascular System</li>
+	  <li onclick="cambiarContenido('pagina12.html')">12. Digestive System</li>
+	  <li onclick="cambiarContenido('pagina13.html')">13. Urinary System and Male Genital</li>
+	  <li onclick="cambiarContenido('pagina14.html')">14. Female Reproductive System</li>
+	  <li onclick="cambiarContenido('pagina15.html')">15. Endocrine and Nervous Systems</li>
+	  <li onclick="cambiarContenido('pagina16.html')">16. Eye and Ocular Adnexa Auditory Systems</li>
+	  <li onclick="cambiarContenido('pagina17.html')">17. Anesthesia</li>
+	  <li onclick="cambiarContenido('pagina18.html')">18. Radiology</li>
+	  <li onclick="cambiarContenido('pagina19.html')">19. Pathology and Laboratory</li>
+	  <li onclick="cambiarContenido('pagina20.html')">20. Evaluation and Management</li>
+	  <li onclick="cambiarContenido('pagina21.html')">21. Medicine</li>
+		
+    </ul>
+	  
+  </aside>
+
+	
+
+  <main class="contenido">
+	  
+	  
+	  
+    <div id="contenido">
+      <!-- Aquí se cargará el contenido de las opciones -->
+      <p>Selecciona una opción del menú para ver el contenido.</p>
+    </div>
+	  
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
