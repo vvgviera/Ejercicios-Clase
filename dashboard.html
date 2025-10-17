@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codificación Medica - Ejercicios de las Clases</title>
+  <link rel="stylesheet" href="style.css">
+	
+	
+<style>
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  height: 300vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+  background-color: #575757;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+</style>
+	
+</head>
+<body>
+	
+  <aside class="sidebar">
+	  
+        <h1>Codificación Medica - Multiples choices - Ejercicios de las clases(2025)</h1>
+        <!--<p>Visitas a esta página:</p>-->
+       <!-- <h2 id="visitCount">0</h2>-->
+        <!--<p>veces</p>-->
+     <p>Contenido:</p> 
+    <ul>
+    
+	<h5>Ejercicios por cada semana</h5>
+      <li onclick="cambiarContenido('pagina1.html')" title="Introducción al CPT, Reglas de Cirugía, HCPCS y Modificadores">1. Semana 3</li>	
+      <li onclick="cambiarContenido('pagina2.html')" title="Sistema Intergumentario">2. Semana 4</li>
+      <li onclick="cambiarContenido('pagina3.html')" title="Sistema Musculoesqueletico / Sistemas Respiratorio, Linfatico, Mediastino y Diafragma">3. Semana 5</li>
+	  <li onclick="cambiarContenido('pagina4.html')" title="Sistema Cardiovascular">4. Semana 6</li>
+      <li onclick="cambiarContenido('pagina5.html')" title="Sistema Digestivo / Sistema Urinario y Genital masculino.">5. Semana 7</li>
+	  <li onclick="cambiarContenido('pagina6.html')" title="Sistema Reproductor Femenino / Sistema Endocrino y Nervioso.">6. Semana 8</li>
+	  <li onclick="cambiarContenido('pagina7.html')" title="Sistemas Ocular y Auditivo / Anestesia">7. Semana 9</li>
+	  <li onclick="cambiarContenido('pagina8.html')" title="Radiologia / Patologia y Laboratorio">8. Semana 10</li>
+	  <li onclick="cambiarContenido('pagina9.html')">9. Semana 11</li>
+      <li onclick="cambiarContenido('pagina10.html')">10. Semana 12</li>	
+		
+    </ul>
+	  
+  </aside>
+
+	
+
+  <main class="contenido">
+	  
+	  
+	  
+    <div id="contenido">
+      <!-- Aquí se cargará el contenido de las opciones -->
+      <p>Selecciona una opción del menú para ver el contenido.</p>
+    </div>
+	  
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
