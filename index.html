@@ -1,94 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Codificación Medica - Ejercicios de las Clases</title>
-  <link rel="stylesheet" href="style.css">
-	
-	
-<style>
-body {
-  display: flex;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.sidebar {
-  width: 200px;
-  background-color: #333;
-  color: #fff;
-  height: 300vh;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 15px;
-  cursor: pointer;
-  padding: 8px 10px;
-  border-radius: 5px;
-}
-
-.sidebar ul li:hover {
-  background-color: #575757;
-}
-
-.contenido {
-  flex-grow: 1;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-</style>
-	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login al Sistema</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-	
-  <aside class="sidebar">
-	  
-        <h1>Codificación Medica - Multiples choices - Ejercicios de las clases(2025)</h1>
-        <!--<p>Visitas a esta página:</p>-->
-       <!-- <h2 id="visitCount">0</h2>-->
-        <!--<p>veces</p>-->
-     <p>Contenido:</p> 
-    <ul>
-    
-	<h5>Ejercicios por cada semana</h5>
-      <li onclick="cambiarContenido('pagina1.html')" title="Introducción al CPT, Reglas de Cirugía, HCPCS y Modificadores">1. Semana 3</li>	
-      <li onclick="cambiarContenido('pagina2.html')" title="Sistema Intergumentario">2. Semana 4</li>
-      <li onclick="cambiarContenido('pagina3.html')" title="Sistema Musculoesqueletico / Sistemas Respiratorio, Linfatico, Mediastino y Diafragma">3. Semana 5</li>
-	  <li onclick="cambiarContenido('pagina4.html')" title="Sistema Cardiovascular">4. Semana 6</li>
-      <li onclick="cambiarContenido('pagina5.html')" title="Sistema Digestivo / Sistema Urinario y Genital masculino.">5. Semana 7</li>
-	  <li onclick="cambiarContenido('pagina6.html')" title="Sistema Reproductor Femenino / Sistema Endocrino y Nervioso.">6. Semana 8</li>
-	  <li onclick="cambiarContenido('pagina7.html')" title="Sistemas Ocular y Auditivo / Anestesia">7. Semana 9</li>
-	  <li onclick="cambiarContenido('pagina8.html')" title="Radiologia / Patologia y Laboratorio">8. Semana 10</li>
-	  <li onclick="cambiarContenido('pagina9.html')">9. Semana 11</li>
-      <li onclick="cambiarContenido('pagina10.html')">10. Semana 12</li>	
-		
-    </ul>
-	  
-  </aside>
+  <div class="login-container">
+    <h3 class="text-center mb-4">Ingreso al Sistema</h3>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Usuario</label>
+        <input type="text" class="form-control" id="username" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" required />
+      </div>
+      <div id="errorMsg" class="text-danger mb-3" style="display:none;"></div>
+      <button type="submit" class="btn btn-primary w-100">Entrar</button>
+    </form>
+  </div>
 
-	
+  <script>
+    const users = [
+      { username: "usuario01", password: "clave01" },
+      { username: "usuario02", password: "clave02" },
+      { username: "usuario03", password: "clave03" },
+      { username: "usuario04", password: "clave04" },
+      { username: "usuario05", password: "clave05" },
+      { username: "usuario06", password: "clave06" },
+      { username: "usuario07", password: "clave07" },
+      { username: "usuario08", password: "clave08" },
+      { username: "usuario09", password: "clave09" },
+      { username: "usuario10", password: "clave10" },
+      { username: "usuario11", password: "clave11" },
+      { username: "usuario12", password: "clave12" },
+      { username: "usuario13", password: "clave13" },
+      { username: "usuario14", password: "clave14" },
+      { username: "usuario15", password: "clave15" },
+      { username: "usuario16", password: "clave16" },
+      { username: "usuario17", password: "clave17" },
+      { username: "usuario18", password: "clave18" },
+      { username: "usuario19", password: "clave19" },
+      { username: "usuario20", password: "clave20" },
+      { username: "usuario21", password: "clave21" },
+      { username: "usuario22", password: "clave22" },
+      { username: "usuario23", password: "clave23" },
+      { username: "usuario24", password: "clave24" },
+      { username: "usuario25", password: "clave25" },
+      { username: "usuario26", password: "clave26" },
+      { username: "usuario27", password: "clave27" },
+      { username: "usuario28", password: "clave28" },
+      { username: "usuario29", password: "clave29" },
+      { username: "usuario30", password: "clave30" }
+    ];
 
-  <main class="contenido">
-	  
-	  
-	  
-    <div id="contenido">
-      <!-- Aquí se cargará el contenido de las opciones -->
-      <p>Selecciona una opción del menú para ver el contenido.</p>
-    </div>
-	  
-  </main>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
 
-  <script src="script.js"></script>
+      const validUser = users.find(user => user.username === username && user.password === password);
+
+      if (validUser) {
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "Usuario o contraseña incorrectos.";
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>
