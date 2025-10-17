@@ -52,8 +52,8 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 300px;
-      height: 300px;
+      width: 500px;
+      height: 500px;
       border: 2px solid #333;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       z-index: 1000;
@@ -119,9 +119,29 @@ body {
       window.location.href = "index.html";
     });
 
-	document.getElementById("mostrarIframeBtn").addEventListener("click", function() {
-      const iframeBox = document.getElementById("iframeBox");
+	const iframeBox = document.getElementById("iframeBox");
+    const mostrarBtn = document.getElementById("mostrarIframeBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const minBtn = document.getElementById("minBtn");
+    const maxBtn = document.getElementById("maxBtn");
+
+    mostrarBtn.addEventListener("click", () => {
       iframeBox.style.display = "block";
+      iframeBox.style.width = "300px";
+      iframeBox.style.height = "300px";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      iframeBox.style.display = "none";
+    });
+
+    minBtn.addEventListener("click", () => {
+      iframeBox.style.height = "40px";
+    });
+
+    maxBtn.addEventListener("click", () => {
+      iframeBox.style.width = "90%";
+      iframeBox.style.height = "90%";
     });
 </script>
   <script src="script.js"></script>
