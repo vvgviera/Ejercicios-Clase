@@ -125,3 +125,11 @@ function limpiarRadios() {
             window.scrollTo(0, 0);
         }
 
+
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      // Si usas sessionStorage o localStorage, puedes limpiar aquí:
+      // sessionStorage.clear(); // o localStorage.clear();
+
+      // Redirige al login
+      window.location.href = "index.html";
+    });
