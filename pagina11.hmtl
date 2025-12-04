@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Preguntas semana 12</h1>
+        <form id="quizForm">
+			
+			<p><strong>Medicine</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong>A 10-year-old had a cochlear implant in his left ear few weeks ago. Today he sees the audiologist to
+                initialize and program the implant. What CPT code is reported?</p>
+                <input type="radio" name="q1" value="incorrect">a.  92626<br>
+                <input type="radio" name="q1" value="incorrect">b. 92630<br>
+                <input type="radio" name="q1" value="correct">c. 92603<br>
+			    <input type="radio" name="q1" value="incorrect">d. 92604<br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong> A 70-year-old female who has a history of COPD comes into the ER with sudden shortness of
+				breath and dizziness. She has a continuous aerosol treatment for 1 hour and 45 minutes. The
+				final diagnosis is COPD with acute exacerbation. What CPT and ICD-10-CM codes are reported?</p>
+                <input type="radio" name="q2" value="incorrect">a.  94640 x 2, J44.1 <br>
+                <input type="radio" name="q2" value="incorrect">b. 94640, 94640-76, J44.9 <br>
+		        <input type="radio" name="q2" value="correct">c. 94644, 94645, J44.1 <br>
+                <input type="radio" name="q2" value="incorrect">d. 94644, 94645-51, J44.0 <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong>A 7-year-old male with a heart murmur and fatigue since birth has a transesophageal
+				echocardiography (TEE). Doppler echocardiography is also performed with color flow, pulse wave,
+				and continuous wave. Pulmonary valve stenosis is diagnosed. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q3" value="correct">a. 93315, 93325<br>
+			    <input type="radio" name="q3" value="incorrect">b. 93315, 93320 <br>
+                <input type="radio" name="q3" value="incorrect">c. 93318, 93325<br>
+				<input type="radio" name="q3" value="incorrect">d. 93318, 93320<br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 4:</strong>A cardiologist uses the hospital's equipment for a cardiac stress test as he doesn't own equipment for the
+				test. He supervises the test and provides the interpretation and report of the test. What CPT codes are
+				reported? </p>
+                
+                <input type="radio" name="q4" value="correct">a. 93016, 93018<br>
+				<input type="radio" name="q4" value="incorrect">b. 93015, 93018 <br>
+                <input type="radio" name="q4" value="incorrect">c. 93015, 93016<br>
+				<input type="radio" name="q4" value="incorrect">d. 93016, 93017, 93018 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> Which coding option is correct for 1 hour of crisis psychotherapy for a child abuse victim with state
+				agency report? </p>
+                
+                <input type="radio" name="q5" value="correct">a. 90839<br>
+				<input type="radio" name="q5" value="incorrect">b. 90838 <br>
+                <input type="radio" name="q5" value="incorrect">c. 90791 <br>
+		        <input type="radio" name="q5" value="incorrect">d. 90845 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 6:</strong> A 45-year-old patient with multiple sclerosis receives continuous IV infusion therapy of a therapeutic
+				medication for 1 hour and 45 minutes. What is the correct way to report the infusion? </p>
+                
+                <input type="radio" name="q6" value="correct">a. 96365, 96366<br>
+			    <input type="radio" name="q6" value="incorrect">b. 96365 <br>
+                <input type="radio" name="q6" value="incorrect">c. 96369 <br>
+			   	<input type="radio" name="q6" value="incorrect">d. 96369, 96370 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 7:</strong>A 67-year-old has calcific aortic valve stenosis. To treat the stenosis, a cardiologist opens the stenotic
+				valve using a balloon catheter to allow the blood to flow more freely. What CPT code is reported?</p>
+                
+                <input type="radio" name="q7" value="correct">a. 92986<br>
+			   	<input type="radio" name="q7" value="incorrect">b. 92987 <br>
+                <input type="radio" name="q7" value="incorrect">c. 33741 <br>
+		        <input type="radio" name="q7" value="incorrect">d. 92997 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> A 5-year-old patient has a fractured radius. The orthopedist provides moderate sedation and the
+				reduction. The time is documented as 21 minutes. What CPT code is reported for the moderate
+				sedation?</p>
+                
+                <input type="radio" name="q8" value="incorrect">a. 99151<br>
+				<input type="radio" name="q8" value="incorrect">b. 99155 <br>
+                <input type="radio" name="q8" value="correct">c. 99152 <br>
+				<input type="radio" name="q8" value="incorrect">d. 99156 <br>
+            </div>
+
+			
+            <button type="button" onclick="evaluateQuiz()">Evaluar</button> <br>
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+		
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
