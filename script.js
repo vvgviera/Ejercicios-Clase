@@ -123,7 +123,9 @@ function limpiarRadios() {
 
 	// Volver al inicio de la página
             window.scrollTo(0, 0);
-        }
+			startTimer();
+			
+		}
 
 
     document.getElementById("logoutBtn").addEventListener("click", function() {
