@@ -6,6 +6,64 @@
     <title>Ejercicios CPC</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">02:07</div> <!-- 127 minutos = 2 horas 07 minutos -->
+
+  <script>
+    let duration = 127 * 60; // 127 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 127 * 60;            // reiniciar a 127 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
 <body>
     <div class="container">
         <h1>Ejercicios CPC</h1>
@@ -520,7 +578,7 @@
 
 		
 			
-            <button type="button" onclick="evaluateQuiz()">Evaluar</button> <br>
+          
 		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
 			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
         </form>
