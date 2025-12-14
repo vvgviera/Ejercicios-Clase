@@ -6,6 +6,59 @@
     <title>Ejercicios CPC</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+	<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<!-- Temporizador -->
+  <div id="timer">20:00</div>
+
+  <script>
+    // Duración en segundos (20 minutos = 1200 segundos)
+    let duration = 20 * 60; 
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let minutes = Math.floor(duration / 60);
+      let seconds = duration % 60;
+
+      // Formato MM:SS
+      timerElement.textContent = 
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);
+        // Aquí llamamos a tu función de evaluación
+        evaluateQuiz();  
+      }
+      duration--;
+    }
+
+    // Actualizar cada segundo
+    updateTimer(); 
+    const countdown = setInterval(updateTimer, 1000);
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+  </script>
+	
 <body>
     <div class="container">
         <h1>Ejercicios CPC</h1>
