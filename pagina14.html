@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">01:12</div> <!-- 72 minutos = 1 horas 12 minutos -->
+
+  <script>
+    let duration = 72 * 60; // 72 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 72 * 60;            // reiniciar a 127 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 5.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> What ICD-10-CM coding is reported for a patient diagnosed with pressure ulcers on each heel, each heel displays bone Involvement with evidence of necrosis and is identified as stage 4? </p>
+                <input type="radio" name="q1" value="incorrect">a.  L97.406 <br>
+                <input type="radio" name="q1" value="incorrect">b. L89.614 <br>
+                <input type="radio" name="q1" value="incorrect">c. L89.619, L89.629 <br>
+			    <input type="radio" name="q1" value="correct">d. L89.614, L89.624 <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  A patient complains of a rash that is extremely itchy. It began when she started using a new laundry detergent. She is examined, and the provider diagnoses her with dermatitis, due to exposure to the laundry detergent. What ICD-10-CM coding is reported? </p>
+                <input type="radio" name="q2" value="incorrect">a.  L23.9 <br>
+                <input type="radio" name="q2" value="incorrect">b. L20.89 <br>
+		        <input type="radio" name="q2" value="incorrect">c. L23.5 <br>
+                <input type="radio" name="q2" value="correct">d. L24.0 <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong>A provider performs an incision and drainage un a large abscess on the patient's left leg. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q3" value="correct">a. L02.416 <br>
+			    <input type="radio" name="q3" value="incorrect">b. L02.91 <br>
+                <input type="radio" name="q3" value="incorrect">c. L72.9 <br>
+				<input type="radio" name="q3" value="incorrect">d. L23.9<br>
+            </div>
+
+			<p><strong>Section Review 5.2</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> An MRI confirmed the patient has sciatica caused by a herniated disc between L5 and S1. She is scheduled for an injection, after which she will be referred to a physical therapist in an effort to avoid surgery. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q4" value="correct">a. M51.17 <br>
+				<input type="radio" name="q4" value="incorrect">b. M51.17, M54.40  <br>
+                <input type="radio" name="q4" value="correct">c. M51.15 <br>
+				<input type="radio" name="q4" value="incorrect">d. M51.86 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> A provider performs an arthroscopic procedure to repair an incomplete right degenerative rotator cuff tear on a patient with primary, degenerative arthritis in the same shoulder. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q5" value="incorrect">a. M75.111, M19.211 <br>
+				<input type="radio" name="q5" value="correct">b. M75.111, M19.011 <br>
+                <input type="radio" name="q5" value="incorrect">c. M66.211, M19.011 <br>
+		        <input type="radio" name="q5" value="incorrect">d. S43.421A, M19.011 <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  A patient with age-related osteoporosis suffers a pathologic fracture to her right hip. She is being seen for this new fracture today, What ICD-10-CM coding is reported?  </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. M81.0, Z87.311 <br>
+			    <input type="radio" name="q6" value="incorrect">b. S72.091A, M80.851A <br>
+                <input type="radio" name="q6" value="correct">c. M80.051A <br>
+			   	<input type="radio" name="q6" value="incorrect">d. M80.851A <br>
+            </div>
+
+			<p><strong>Section Review 5.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> A 55-year-old female with right hydronephrosis presents for a cystourethroscopy with a retrograde pyelogram. What ICD-10-CM coding is reported?</p>
+                
+                <input type="radio" name="q7" value="incorrect">a. Q62.11 <br>
+			   	<input type="radio" name="q7" value="incorrect">b. Q62.0 <br>
+                <input type="radio" name="q7" value="correct">c. N13.30 <br>
+		        <input type="radio" name="q7" value="incorrect">d. N13.6 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> A patient returns to her gynecologist's office to review the results of her ultrasound. She has been experiencing heavy bleeding and painful menstruation. The results of the ultrasound reveal the patient has a uterine fibroid measuring 40 cm. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. N94.6, N92.0, D25.9 <br>
+				<input type="radio" name="q8" value="incorrect">b. N94.6, N92.1, D25.1 <br>
+                <input type="radio" name="q8" value="incorrect">c. D25.1 <br>
+				<input type="radio" name="q8" value="correct">d. D25.9 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> A patient diagnosed with BPH presents with urinary urgency What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q9" value="incorrect">a. N40.0, R39.15 <br>
+				<input type="radio" name="q9" value="incorrect">b. R39.15, N40.1 <br>
+                <input type="radio" name="q9" value="correct">c. N40.1. R39.15 <br>
+				<input type="radio" name="q9" value="incorrect">d. N40.1 <br>
+            </div>
+
+			<p><strong>Section Review 5.4 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> A pregnant female, at 21 weeks, is diagnosed with iron-deficiency anemia and is sent to the clinic for a transfusion. What ICD-10-CM coding is reported?  </p>
+                
+                <input type="radio" name="q10" value="incorrect">a. 099.012 <br>
+				<input type="radio" name="q10" value="incorrect">b. D50.9, Z34.92 <br>
+                <input type="radio" name="q10" value="correct">c. 099.012, D50.9, Z3A.21 <br>
+				<input type="radio" name="q10" value="incorrect">d. D50.9, 099.012 <br>
+            </div>				
+
+			<div class="question">
+                <p><strong>Pregunta 11:</strong> A woman is readmitted one week after delivery with a diagnosis of delayed hemorrhage due to retained placental fragments. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q11" value="correct">a. O72.2 <br>
+				<input type="radio" name="q11" value="incorrect">b. O72.0 <br>
+                <input type="radio" name="q11" value="incorrect">c.  O72.2, O71.9 <br>
+				<input type="radio" name="q11" value="incorrect">d. O72.1 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> A patient presented to the emergency department with second degree burns to both forearms, which makes up 9 percent TBSA (Total Body Surface Area). She is three months pregnant, 12 weeks. The burns are not affecting the pregnancy. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. T22.212A, T22.211A, T31.0,O09.90 <br>
+				<input type="radio" name="q12" value="incorrect">b. T22-212A. T22.211A, T31.0, Z34.90 <br>
+                <input type="radio" name="q12" value="incorrect">c. T22.212A, T22.211A, T31.0, Z34.80 <br>
+				<input type="radio" name="q12" value="correct">d. T22.212A, 722.211A, T31.0, Z33.1 <br>
+            </div>
+
+			<p><strong>Section Review 5.5 </strong></p> 
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> Which statement is TRUE regarding the perinatal period? </p>
+                
+                <input type="radio" name="q13" value="incorrect">a. It begins at six weeks <br>
+				<input type="radio" name="q13" value="correct">b. It ends at 28 days <br>
+                <input type="radio" name="q13" value="incorrect">c. It ends at 90 days <br>
+				<input type="radio" name="q13" value="incorrect">d. It begins at 29 days <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> A male newborn, delivered vaginally in the hospital, is born with jaundice. What ICD-10-CM coding is reported for the newborn's record? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. P59.9, Z38.30 <br>
+				<input type="radio" name="q14" value="incorrect">b. R17, O80, Z37.0 <br>
+                <input type="radio" name="q14" value="incorrect">c. P59.9 <br>
+				<input type="radio" name="q14" value="correct">d. Z38.00, P59.9 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  What ICD-10-CM coding is reported for feeding problems in a newborn? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. R63.30 <br>
+				<input type="radio" name="q15" value="correct">b. P92.9 <br>
+                <input type="radio" name="q15" value="incorrect">c. P92.01 <br>
+				<input type="radio" name="q15" value="incorrect">d. P76.0 <br>
+            </div>
+
+			<p><strong>Section Review 5.6</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong> A code from categories Q00-Q99 can be used until the patient reaches what age? Refer to ICD-10-CM guideline I.C.17. </p>
+                
+                <input type="radio" name="q16" value="correct">a. They can be used throughout the life of the patient unless it has been corrected. <br>
+				<input type="radio" name="q16" value="incorrect">b. They can be used throughout the life of the patient. <br>
+                <input type="radio" name="q16" value="incorrect">c. From birth to the 28th day of life <br>
+				<input type="radio" name="q16" value="incorrect">d. From birth until age 18 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong>  The hospital documentation states "normal vaginal delivery, live birth, female, with Down Syndrome" What ICD-10-CM coding is reported for the infant's record? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. Q97.1 <br>
+				<input type="radio" name="q17" value="incorrect">b. Q90.9 <br>
+                <input type="radio" name="q17" value="correct">c. Z38.00, Q90.9 <br>
+				<input type="radio" name="q17" value="incorrect">d. Q90.9, Z38.00 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong>  A4-year-old male is brought to the hospital by his mother. Today he is going to have surgery to repair his Cheiloschisis. Assign the correct code for his condition. </p>
+                
+                <input type="radio" name="q18" value="incorrect">a. Q38.0 <br>
+				<input type="radio" name="q18" value="incorrect">b. Q38.5 <br>
+                <input type="radio" name="q18" value="correct">c. Q36.9 <br>
+				<input type="radio" name="q18" value="incorrect">d. Q37.9 <br>
+            </div>
+
+			<p><strong>Section Review 5.7</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong>    Mrs. Bixby, 83, is being admitted for dehydration and anorexia. The probable cause is dementia. She was brought in by her daughter who is visiting from out of town. Her daughter will take her from our office to St. Mary's. The gerontology unit will evaluate her mental condition tomorrow after she is stabilized. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. F50.00, E86.0 <br>
+				<input type="radio" name="q19" value="correct">b. R63.0, E86.0 <br>
+                <input type="radio" name="q19" value="incorrect">c. F50.00, E86.0, F02.80 <br>
+				<input type="radio" name="q19" value="incorrect">d. R63.0, E86.0, F02.80 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 20:</strong>  What is the diagnosis code for an elevated blood pressure reading? </p>
+                
+                <input type="radio" name="q20" value="incorrect">a. I10 <br>
+				<input type="radio" name="q20" value="correct">b. R03.0 <br>
+                <input type="radio" name="q20" value="incorrect">c. I15.8 <br>
+				<input type="radio" name="q20" value="incorrect">d. I95.9 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 21:</strong> When should a code for signs and symptoms be reported? Refer to ICD-10-CM guidelines I.C.18.a and I.C.18.b. </p>
+                
+                <input type="radio" name="q21" value="incorrect">a. When it is integral to the definitive diagnosis. <br>
+				<input type="radio" name="q21" value="incorrect">b. When a probable diagnosis is confirmed. <br>
+                <input type="radio" name="q21" value="correct">c. When it is not integral to the definitive diagnosis. <br>
+				<input type="radio" name="q21" value="incorrect">d. When it is a confirmed symptom of the diagnosis. <br>
+            </div>
+
+			<p><strong>Section Review 5.8 </strong></p>
+
+			<div class="question">
+                <p><strong>Pregunta 22:</strong> The provider performs an open reduction and internal fixation for left fibula and tibia fractures. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q22" value="correct">a. S82.402A, S82.202A <br>
+				<input type="radio" name="q22" value="incorrect">b. S82.402B, S82.202B <br>
+                <input type="radio" name="q22" value="incorrect">c. S82.401A, S82.209A <br>
+				<input type="radio" name="q22" value="incorrect">d. S82.402B, S82.209B <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 23:</strong>  A patient was sent home with a PICC line for Vancomycin treatment at home. He returns to his physician with an infection due to the PICC Line. The infection is determined to be MRSA. What ICD-10-CM coding is reported, in the correct sequence? </p>
+                
+                <input type="radio" name="q23" value="incorrect">a. T80.218A <br>
+				<input type="radio" name="q23" value="incorrect">b. A49.02 <br>
+                <input type="radio" name="q23" value="correct">c. T80.218A, A49.02 <br>
+				<input type="radio" name="q23" value="incorrect">d. A49.02, T80.218A <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 24:</strong>  A parent was prescribed an antidepressant. She forgot she had taken her pills for the day and took another pill by accident. She is now complaining of dizziness and excessive sweating. What ICD-10-CM coding is reported, in the correct sequence? </p>
+                
+                <input type="radio" name="q24" value="incorrect">a. R42, R61, T43.201A <br>
+				<input type="radio" name="q24" value="incorrect">b. R61, R42, T43.202A  <br>
+                <input type="radio" name="q24" value="incorrect">c. T43.201A, F45.8, R61 <br>
+				<input type="radio" name="q24" value="correct">d. T43.201A, R42, R61 <br>
+            </div>
+			
+			<p><strong>Section Review 5.9 </strong></p> 
+			
+			<div class="question">
+                <p><strong>Pregunta 25:</strong>   A male patient was a passenger in an automobile involved in a serious collision with another automobile. He sustained a closed fracture of the coronoid process of the jaw and an open left shaft fracture, Type 1, of the radius with an open Type 1 shaft fracture of the left ulna. What ICD-10-CM coding is reported ? </p>
+                
+                <input type="radio" name="q25" value="incorrect">a. S52.302B, S52.292B, V43.62XA <br>
+				<input type="radio" name="q25" value="incorrect">b. S52.3024, S52.202A, S02.630A, V43.92XA <br>
+                <input type="radio" name="q25" value="incorrect">c. S52.302B, S52.292B, S02.630B, V43.32XA <br>
+				<input type="radio" name="q25" value="correct">d. S52.302B, S52.202B, S02.630A, V43.62XA <br>
+            </div>		
+
+			<div class="question">
+                <p><strong>Pregunta 26:</strong>   The patient was hit in the nose by the ball playing basketball on the varsity team last evening at the gym and woke up with severe epistaxis. The family physician controlled the nasal hemorrhage with cauterization and afterwards packed the nose with nasal packs. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q26" value="incorrect">a. R04.0 W21.09XA, Y92.39, Y93.79, Y99.8 <br>
+				<input type="radio" name="q26" value="correct">b. R04.0, W21.05XA, Y92.39, Y93.67, Y99.8 <br>
+                <input type="radio" name="q26" value="incorrect">c. I78.0, W21.05XA, Y92.39, Y92.79, Y99.8 <br>
+				<input type="radio" name="q26" value="incorrect">d. I78.0, W21.00XA, Y92.39, Y93.67, Y99.8 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 27:</strong>  Which statement is TRUE regarding external cause codes? Refer to ICD-10-CM guideline I.C.20.a.6. </p>
+                
+                <input type="radio" name="q27" value="correct">a. External cause codes are never sequenced first.  <br>
+				<input type="radio" name="q27" value="incorrect">b. External cause codes are only sequenced first if a definite diagnosis is not established. <br>
+                <input type="radio" name="q27" value="incorrect">c. External cause codes are used to indicate the reason for a screening exam. <br>
+				<input type="radio" name="q27" value="incorrect">d.  External cause codes are used to report abnormal findings. <br>
+            </div>
+			
+           <p><strong>Section Review 5.10</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 28:</strong> The provider orders serum blood tests as part of a pre-employment physical exam. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q28" value="incorrect">a. Z00.00 <br>
+				<input type="radio" name="q28" value="incorrect">b. Z00.01 <br>
+                <input type="radio" name="q28" value="correct">c. Z02.1 <br>
+				<input type="radio" name="q28" value="incorrect">d. Z02.79 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 29:</strong>   The patient's dense breast tissue made the screening mammogram unreadable, and she is here today for a breast ultrasound, Her mother and sister boch have history of breast cancer. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q29" value="incorrect">a. N60.01, N60.02, R92.30, Z80.3 <br>
+				<input type="radio" name="q29" value="incorrect">b. Z12.31, N62, Z80.3 <br>
+                <input type="radio" name="q29" value="incorrect">c. Z13.89, R92.30, R92.2, Z80.3 <br>
+				<input type="radio" name="q29" value="correct">d. Z12.39, R92.30, R92.2, Z80.3 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 30:</strong>  When a patient presents for a screening test and the provider finds something almormal, what diagnosis code should be sequenced first? Refer to ICD-10-CM guideline I.C.21.c.5.  </p> 
+                
+                <input type="radio" name="q30" value="incorrect">a. The diagnosis for the abnormality that was found <br>
+				<input type="radio" name="q30" value="correct">b. The Z code to identify the screening <br>
+                <input type="radio" name="q30" value="incorrect">c. The code for abnormal results  <br>
+				<input type="radio" name="q30" value="incorrect">d. The signs and symptoms <br>
+            </div>	
+
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
