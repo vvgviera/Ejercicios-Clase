@@ -23,10 +23,10 @@
     }
   </style>
 
-	<div id="timer">01:12</div> <!-- 72 minutos = 1 horas 12 minutos -->
+	<div id="timer">01:10</div> <!-- 70 minutos = 1 horas 10 minutos -->
 
   <script>
-    let duration = 72 * 60; // 72 minutos en segundos
+    let duration = 70 * 60; // 72 minutos en segundos
     let countdown;          
     const timerElement = document.getElementById("timer");
 
@@ -50,7 +50,7 @@
 
     function startTimer() {
       clearInterval(countdown);       // detener cualquier contador previo
-      duration = 72 * 60;            // reiniciar a 127 minutos
+      duration = 70 * 60;            // reiniciar a 70 minutos
       updateTimer();                  // mostrar inmediatamente
       countdown = setInterval(updateTimer, 1000); // arrancar
     }
@@ -288,72 +288,49 @@
 			<p><strong>Section Review 6.5</strong></p>
 			
 			<div class="question">
-                <p><strong>Pregunta 24:</strong>  A parent was prescribed an antidepressant. She forgot she had taken her pills for the day and took another pill by accident. She is now complaining of dizziness and excessive sweating. What ICD-10-CM coding is reported, in the correct sequence? </p>
+                <p><strong>Pregunta 24:</strong>  Which CPT modifier should you append to a procedure code for a bilateral procedure? </p>
                 
-                <input type="radio" name="q24" value="incorrect">a. R42, R61, T43.201A <br>
-				<input type="radio" name="q24" value="incorrect">b. R61, R42, T43.202A  <br>
-                <input type="radio" name="q24" value="incorrect">c. T43.201A, F45.8, R61 <br>
-				<input type="radio" name="q24" value="correct">d. T43.201A, R42, R61 <br>
-            </div>
-			
-			<p><strong>Section Review 5.9 </strong></p> 
-			
+                <input type="radio" name="q24" value="incorrect">a. 22 <br>
+				<input type="radio" name="q24" value="correct">b. 50  <br>
+                <input type="radio" name="q24" value="incorrect">c. 51 <br>
+				<input type="radio" name="q24" value="incorrect">d. 59 <br>
+            </div>			
+					
 			<div class="question">
-                <p><strong>Pregunta 25:</strong>   A male patient was a passenger in an automobile involved in a serious collision with another automobile. He sustained a closed fracture of the coronoid process of the jaw and an open left shaft fracture, Type 1, of the radius with an open Type 1 shaft fracture of the left ulna. What ICD-10-CM coding is reported ? </p>
+                <p><strong>Pregunta 25:</strong>  What types of modifiers are listed in Appendix A of the CPT code book? </p>
                 
-                <input type="radio" name="q25" value="incorrect">a. S52.302B, S52.292B, V43.62XA <br>
-				<input type="radio" name="q25" value="incorrect">b. S52.3024, S52.202A, S02.630A, V43.92XA <br>
-                <input type="radio" name="q25" value="incorrect">c. S52.302B, S52.292B, S02.630B, V43.32XA <br>
-				<input type="radio" name="q25" value="correct">d. S52.302B, S52.202B, S02.630A, V43.62XA <br>
+                <input type="radio" name="q25" value="incorrect">a. CPT, Anesthesia Physical Status Modifiers, Surgical <br>
+				<input type="radio" name="q25" value="correct">b. CPT, ASC, HCPCS, Anesthesia Physical Status Modifiers <br>
+                <input type="radio" name="q25" value="incorrect">c. HCPCS, CPT, Surgical <br>
+				<input type="radio" name="q25" value="incorrect">d. CPT, HCPCS, Category I <br>
             </div>		
 
 			<div class="question">
-                <p><strong>Pregunta 26:</strong>   The patient was hit in the nose by the ball playing basketball on the varsity team last evening at the gym and woke up with severe epistaxis. The family physician controlled the nasal hemorrhage with cauterization and afterwards packed the nose with nasal packs. What ICD-10-CM coding is reported? </p>
+                <p><strong>Pregunta 26:</strong>   Which HCPCS Level II modifier should you append for a new wheelchair purchase? </p>
                 
-                <input type="radio" name="q26" value="incorrect">a. R04.0 W21.09XA, Y92.39, Y93.79, Y99.8 <br>
-				<input type="radio" name="q26" value="correct">b. R04.0, W21.05XA, Y92.39, Y93.67, Y99.8 <br>
-                <input type="radio" name="q26" value="incorrect">c. I78.0, W21.05XA, Y92.39, Y92.79, Y99.8 <br>
-				<input type="radio" name="q26" value="incorrect">d. I78.0, W21.00XA, Y92.39, Y93.67, Y99.8 <br>
+                <input type="radio" name="q26" value="incorrect">a. GM <br>
+				<input type="radio" name="q26" value="incorrect">b. HC <br>
+                <input type="radio" name="q26" value="incorrect">c. NR <br>
+				<input type="radio" name="q26" value="correct">d. NU <br>
             </div>
 			
 			<div class="question">
-                <p><strong>Pregunta 27:</strong>  Which statement is TRUE regarding external cause codes? Refer to ICD-10-CM guideline I.C.20.a.6. </p>
+                <p><strong>Pregunta 27:</strong>  What modifier do you append to a CPT code if a commercial insurance company requires the patient to acquire a medical consultation from a second physician? </p>
                 
-                <input type="radio" name="q27" value="correct">a. External cause codes are never sequenced first.  <br>
-				<input type="radio" name="q27" value="incorrect">b. External cause codes are only sequenced first if a definite diagnosis is not established. <br>
-                <input type="radio" name="q27" value="incorrect">c. External cause codes are used to indicate the reason for a screening exam. <br>
-				<input type="radio" name="q27" value="incorrect">d.  External cause codes are used to report abnormal findings. <br>
-            </div>
-			
-           <p><strong>Section Review 5.10</strong></p>
-			
-			<div class="question">
-                <p><strong>Pregunta 28:</strong> The provider orders serum blood tests as part of a pre-employment physical exam. What ICD-10-CM coding is reported? </p>
-                
-                <input type="radio" name="q28" value="incorrect">a. Z00.00 <br>
-				<input type="radio" name="q28" value="incorrect">b. Z00.01 <br>
-                <input type="radio" name="q28" value="correct">c. Z02.1 <br>
-				<input type="radio" name="q28" value="incorrect">d. Z02.79 <br>
-            </div>
-
-			<div class="question">
-                <p><strong>Pregunta 29:</strong>   The patient's dense breast tissue made the screening mammogram unreadable, and she is here today for a breast ultrasound, Her mother and sister boch have history of breast cancer. What ICD-10-CM coding is reported? </p>
-                
-                <input type="radio" name="q29" value="incorrect">a. N60.01, N60.02, R92.30, Z80.3 <br>
-				<input type="radio" name="q29" value="incorrect">b. Z12.31, N62, Z80.3 <br>
-                <input type="radio" name="q29" value="incorrect">c. Z13.89, R92.30, R92.2, Z80.3 <br>
-				<input type="radio" name="q29" value="correct">d. Z12.39, R92.30, R92.2, Z80.3 <br>
+                <input type="radio" name="q27" value="incorrect">a. 22  <br>
+				<input type="radio" name="q27" value="incorrect">b. 25 <br>
+                <input type="radio" name="q27" value="correct">c. 32 <br>
+				<input type="radio" name="q27" value="incorrect">d.  59 <br>
             </div>
 			
 			<div class="question">
-                <p><strong>Pregunta 30:</strong>  When a patient presents for a screening test and the provider finds something almormal, what diagnosis code should be sequenced first? Refer to ICD-10-CM guideline I.C.21.c.5.  </p> 
+                <p><strong>Pregunta 28:</strong>  In which option below is it appropriate to append HCPCS Level II modifiers to CPT procedure codes? </p>
                 
-                <input type="radio" name="q30" value="incorrect">a. The diagnosis for the abnormality that was found <br>
-				<input type="radio" name="q30" value="correct">b. The Z code to identify the screening <br>
-                <input type="radio" name="q30" value="incorrect">c. The code for abnormal results  <br>
-				<input type="radio" name="q30" value="incorrect">d. The signs and symptoms <br>
-            </div>	
-
+                <input type="radio" name="q28" value="incorrect">a. Never, HCPCS Level II Modifiers are only appended to HCPCS Level II codes <br>
+				<input type="radio" name="q28" value="correct">b. When specificity is required for eyelids, fingers, toes, and coronary arteries <br>
+                <input type="radio" name="q28" value="incorrect">c. When CPT and HCPCS Level II codes are reported together <br>
+				<input type="radio" name="q28" value="incorrect">d. Always <br>
+            </div>
 			
 			
           
