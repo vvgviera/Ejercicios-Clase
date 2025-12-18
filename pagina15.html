@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">01:10</div> <!-- 70 minutos = 1 horas 10 minutos -->
+
+  <script>
+    let duration = 70 * 60; // 72 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 70 * 60;            // reiniciar a 70 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 6.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> What is the full description for CPT code 43622? </p>
+                <input type="radio" name="q1" value="incorrect">a.  With formation of intestinal pouch, any type <br>
+                <input type="radio" name="q1" value="incorrect">b. Gastrectomy, total; with Rous-en-Y reconstruction and formation of intestinal pouch, any type <br>
+                <input type="radio" name="q1" value="incorrect">c. C. Gastrectomy, total, with esophagoenterostomy with formation of intestinal pouch, any type <br>
+			    <input type="radio" name="q1" value="correct">d. Gastrectomy, total, with formation of intestinal pouch, any type <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  Which one of the CPT codes listed below would modifier 50 be appended to for a bilateral procedure? </p>
+                <input type="radio" name="q2" value="incorrect">a.  22510 <br>
+                <input type="radio" name="q2" value="incorrect">b. 36251 <br>
+		        <input type="radio" name="q2" value="incorrect">c. 36252 <br>
+                <input type="radio" name="q2" value="correct">d. 37650 <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> Which statement is TRUE regarding modifier 51 in the CPT code hook? </p>
+                
+                <input type="radio" name="q3" value="incorrect">a. Modifier 51 can be replaced by using the RT and LT modifiers. <br>
+			    <input type="radio" name="q3" value="incorrect">b. Add-on codes should always have modifier 51 appended to them. <br>
+                <input type="radio" name="q3" value="correct">c. Codes exempt from modifier 51 are identified with the universal forbidden symbol. <br>
+				<input type="radio" name="q3" value="incorrect">d. A list of modifier 51 exempt codes can be found in Appendix A of the CPT code book <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> The National Correct Coding initiative (NCCI) files contain a Correct Coding Modifier (CCM) indicator. What does the CCM Indicator O mean? </p>
+                
+                <input type="radio" name="q4" value="correct">a. A CCM is not allowed and will not bypass the edits. <br>
+				<input type="radio" name="q4" value="incorrect">b. A CCM is allowed and will bypass the edits. <br>
+                <input type="radio" name="q4" value="correct">c. The use of modifiers is not specified. <br>
+				<input type="radio" name="q4" value="incorrect">d. Only modifier 59 will bypass the edits <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> According to the parenthetical instructions for CPT code 33690, how should right and left pulmonary artery banding in a single ventricle be reported? </p>
+                
+                <input type="radio" name="q5" value="incorrect">a. 33690-50 <br>
+				<input type="radio" name="q5" value="correct">b. 33620 <br>
+                <input type="radio" name="q5" value="incorrect">c. 33690-63 <br>
+		        <input type="radio" name="q5" value="incorrect">d. 33620-50 <br>
+            </div>			
+			
+			<p><strong>Section Review 6.2</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  What association maintains and publishes CPT coding guidelines, codes, and descriptions?  </p>
+                
+                <input type="radio" name="q6" value="correct">a. AMA <br>
+			    <input type="radio" name="q6" value="incorrect">b. CPT <br>
+                <input type="radio" name="q6" value="incorrect">c. CMS <br>
+			   	<input type="radio" name="q6" value="incorrect">d. HCPCS <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> What are three methods used to list main terms in the CPT code book alphabetic index? </p>
+                
+                <input type="radio" name="q7" value="incorrect">a. CPT, HCPCS, HCPCS Level II <br>
+			   	<input type="radio" name="q7" value="correct">b. Categories I, II, and III <br>
+                <input type="radio" name="q7" value="incorrect">c. CPT, Modifiers, Index <br>
+		        <input type="radio" name="q7" value="incorrect">d. CPT, Modifiers, HCPCS Level II <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> A patient returns to her gynecologist's office to review the results of her ultrasound. She has been experiencing heavy bleeding and painful menstruation. The results of the ultrasound reveal the patient has a uterine fibroid measuring 40 cm. What ICD-10-CM coding is reported? </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. Condition, brand names, procedure <br>
+				<input type="radio" name="q8" value="correct">b. Condition, synonyms, abbreviations <br>
+                <input type="radio" name="q8" value="incorrect">c. Anatomic site, surgical specialty, eponyms <br>
+				<input type="radio" name="q8" value="incorrect">d. Eponyms, procedure, instruments <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> What three components are used to configure relative value units? </p>
+                
+                <input type="radio" name="q9" value="incorrect">a. Location of practice, location of medical school, ancillary personnel <br>
+				<input type="radio" name="q9" value="incorrect">b. Malpractice insurance claims, physician work, practice expense <br>
+                <input type="radio" name="q9" value="correct">c. Malpractice insurance costs, physician work, practice expense <br>
+				<input type="radio" name="q9" value="incorrect">d. All of the above <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> What are the Physician Fee Schedule's definitions for facility and non-facility? </p>
+                
+                <input type="radio" name="q10" value="incorrect">a. Facility includes privately owned physician practices and non-facility includes hospital owned physician practices  <br>
+				<input type="radio" name="q10" value="incorrect">b. Non-facility includes privately owned physician practices <br>
+                <input type="radio" name="q10" value="incorrect">c. Facility includes skilled nursing facilities, nursing homes, and hospital settings <br>
+				<input type="radio" name="q10" value="correct">d. Both B and C <br>
+            </div>				
+
+			<div class="question">
+                <p><strong>Pregunta 11:</strong> Which CPT code set is used voluntarily by physicians to report quality patient performance measurements? </p>
+                
+                <input type="radio" name="q11" value="incorrect">a. Category I codes <br>
+				<input type="radio" name="q11" value="correct">b. Category Il codes <br>
+                <input type="radio" name="q11" value="incorrect">c. Category III codes <br>
+				<input type="radio" name="q11" value="incorrect">d. CPT unlisted codes <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> CPT Category III codes are reported to indicate which type of service or procedure? </p>
+                
+                <input type="radio" name="q12" value="correct">a. New and emerging <br>
+				<input type="radio" name="q12" value="incorrect">b. Experimental <br>
+                <input type="radio" name="q12" value="incorrect">c. Unlisted <br>
+				<input type="radio" name="q12" value="incorrect">d. New and extended <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> Which CPT Appendix lists the summary of the resequenced CPT codes? </p>
+                
+                <input type="radio" name="q13" value="incorrect">a. Appendix B <br>
+				<input type="radio" name="q13" value="correct">b. Appendix N <br>
+                <input type="radio" name="q13" value="incorrect">c. Appendix D <br>
+				<input type="radio" name="q13" value="incorrect">d. Appendix P <br>
+            </div>
+
+			<p><strong>Section Review 6.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> What services are included in the surgical global package? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. Preoperative visits, Intraoperative services, Initial consultation <br>
+				<input type="radio" name="q14" value="incorrect">b. Intraoperative services, Diagnostic tests, Experimental procedures <br>
+                <input type="radio" name="q14" value="incorrect">c. Bilateral procedures, Documentation, Diagnostic tests <br>
+				<input type="radio" name="q14" value="correct">d. Preoperative visits, Intraoperative services, Postsurgical pain management <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  What is the postoperative period included in the surgical global package for major surgery? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. 0-10 days <br>
+				<input type="radio" name="q15" value="incorrect">b. 60 days <br>
+                <input type="radio" name="q15" value="correct">c. 90 days <br>
+				<input type="radio" name="q15" value="incorrect">d. 120 days <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong> When surgery is performed, what services are included and not billed separately? </p>
+                
+                <input type="radio" name="q16" value="incorrect">a. Postoperative follow-up care <br>
+				<input type="radio" name="q16" value="incorrect">b. Topical anesthesia <br>
+                <input type="radio" name="q16" value="incorrect">c. Writing orders <br>
+				<input type="radio" name="q16" value="correct">d. All of the above <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong>  Which modifiers are appended to E/M codes to report payable services within the global package? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. 24, 26, 51 <br>
+				<input type="radio" name="q17" value="incorrect">b. 24,25, 47 <br>
+                <input type="radio" name="q17" value="correct">c. 24, 25, 57 <br>
+				<input type="radio" name="q17" value="incorrect">d. 24, 26, 57 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong>  What is the CMS global period status indicator for endoscopies? </p>
+                
+                <input type="radio" name="q18" value="correct">a. 000 <br>
+				<input type="radio" name="q18" value="incorrect">b. 010 <br>
+                <input type="radio" name="q18" value="incorrect">c. 030 <br>
+				<input type="radio" name="q18" value="incorrect">d. None of the above <br>
+            </div>
+
+			<p><strong>Section Review 6.4</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong>    What are three types of codes printed in the HCPCS Level II code book? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. Level II Codes, Modifiers, DME Codes <br>
+				<input type="radio" name="q19" value="incorrect">b. Level II Codes, G Codes, Miscellaneous <br>
+                <input type="radio" name="q19" value="correct">c. Miscellaneous Codes, Permanent National Codes, Temporary National Codes <br>
+				<input type="radio" name="q19" value="incorrect">d. Dental Codes, Permanent National Codes, Unlisted Codes <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 20:</strong>  How often can HCPCS Level II temporary codes be updated? </p>
+                
+                <input type="radio" name="q20" value="incorrect">a. Once annually <br>
+				<input type="radio" name="q20" value="incorrect">b. Biannually <br>
+                <input type="radio" name="q20" value="correct">c. Quarterly <br>
+				<input type="radio" name="q20" value="incorrect">d. None of the above <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 21:</strong> Which set of HCPCS Level II codes are required for use under the Medicare Outpatient Prospective Payment System? </p>
+                
+                <input type="radio" name="q21" value="incorrect">a. A codes <br>
+				<input type="radio" name="q21" value="correct">b. C codes <br>
+                <input type="radio" name="q21" value="incorrect">c. G codes <br>
+				<input type="radio" name="q21" value="incorrect">d. T codes <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 22:</strong> Which set of HCPCS Level II codes are considered temporary codes assigned by CMS and reviewed by AMA for inclusion in the CPT? </p>
+                
+                <input type="radio" name="q22" value="incorrect">a. A codes <br>
+				<input type="radio" name="q22" value="incorrect">b. C codes <br>
+                <input type="radio" name="q22" value="incorrect">c. G codes <br>
+				<input type="radio" name="q22" value="correct">d. J codes <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 23:</strong>  Which set of HCPCS Level II codes are used to report injected drugs? </p>
+                
+                <input type="radio" name="q23" value="incorrect">a. A codes <br>
+				<input type="radio" name="q23" value="incorrect">b. C codes <br>
+                <input type="radio" name="q23" value="correct">c. H codes <br>
+				<input type="radio" name="q23" value="incorrect">d. J codes <br>
+            </div>
+
+			<p><strong>Section Review 6.5</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 24:</strong>  Which CPT modifier should you append to a procedure code for a bilateral procedure? </p>
+                
+                <input type="radio" name="q24" value="incorrect">a. 22 <br>
+				<input type="radio" name="q24" value="correct">b. 50  <br>
+                <input type="radio" name="q24" value="incorrect">c. 51 <br>
+				<input type="radio" name="q24" value="incorrect">d. 59 <br>
+            </div>			
+					
+			<div class="question">
+                <p><strong>Pregunta 25:</strong>  What types of modifiers are listed in Appendix A of the CPT code book? </p>
+                
+                <input type="radio" name="q25" value="incorrect">a. CPT, Anesthesia Physical Status Modifiers, Surgical <br>
+				<input type="radio" name="q25" value="correct">b. CPT, ASC, HCPCS, Anesthesia Physical Status Modifiers <br>
+                <input type="radio" name="q25" value="incorrect">c. HCPCS, CPT, Surgical <br>
+				<input type="radio" name="q25" value="incorrect">d. CPT, HCPCS, Category I <br>
+            </div>		
+
+			<div class="question">
+                <p><strong>Pregunta 26:</strong>   Which HCPCS Level II modifier should you append for a new wheelchair purchase? </p>
+                
+                <input type="radio" name="q26" value="incorrect">a. GM <br>
+				<input type="radio" name="q26" value="incorrect">b. HC <br>
+                <input type="radio" name="q26" value="incorrect">c. NR <br>
+				<input type="radio" name="q26" value="correct">d. NU <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 27:</strong>  What modifier do you append to a CPT code if a commercial insurance company requires the patient to acquire a medical consultation from a second physician? </p>
+                
+                <input type="radio" name="q27" value="incorrect">a. 22  <br>
+				<input type="radio" name="q27" value="incorrect">b. 25 <br>
+                <input type="radio" name="q27" value="correct">c. 32 <br>
+				<input type="radio" name="q27" value="incorrect">d.  59 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 28:</strong>  In which option below is it appropriate to append HCPCS Level II modifiers to CPT procedure codes? </p>
+                
+                <input type="radio" name="q28" value="incorrect">a. Never, HCPCS Level II Modifiers are only appended to HCPCS Level II codes <br>
+				<input type="radio" name="q28" value="correct">b. When specificity is required for eyelids, fingers, toes, and coronary arteries <br>
+                <input type="radio" name="q28" value="incorrect">c. When CPT and HCPCS Level II codes are reported together <br>
+				<input type="radio" name="q28" value="incorrect">d. Always <br>
+            </div>
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
