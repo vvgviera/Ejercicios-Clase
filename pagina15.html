@@ -26,7 +26,7 @@
 	<div id="timer">01:10</div> <!-- 70 minutos = 1 horas 10 minutos -->
 
   <script>
-    let duration = 70 * 60; // 72 minutos en segundos
+    let duration = 48 * 60; // 48 minutos en segundos
     let countdown;          
     const timerElement = document.getElementById("timer");
 
@@ -50,7 +50,7 @@
 
     function startTimer() {
       clearInterval(countdown);       // detener cualquier contador previo
-      duration = 70 * 60;            // reiniciar a 70 minutos
+      duration = 48 * 60;            // reiniciar a 48 minutos
       updateTimer();                  // mostrar inmediatamente
       countdown = setInterval(updateTimer, 1000); // arrancar
     }
@@ -226,124 +226,53 @@
 			<p><strong>Section Review 7.4 </strong></p>
 			
 			<div class="question">
-                <p><strong>Pregunta 16:</strong> When surgery is performed, what services are included and not billed separately? </p>
+                <p><strong>Pregunta 16:</strong> Patient presents to the dermatologist for the removal of warts on his hands. Upon evaluation, it is noted the patient has nine warts on his right hand and 10 on his left hand, all of which he has indicated he would like removed today. After discussion with the patient regarding the destruction method and aftercare the patient agreed to proceed. Using cryosurgery, the physician applied two squirts of liquid nitrogen on each of the warts on his right and left hand. Aftercare instructions were given to the patient's wife. The patient tolerated the procedure well.<br>
+				What CPT coding is reported for this example? </p>
                 
-                <input type="radio" name="q16" value="incorrect">a. Postoperative follow-up care <br>
-				<input type="radio" name="q16" value="incorrect">b. Topical anesthesia <br>
-                <input type="radio" name="q16" value="incorrect">c. Writing orders <br>
-				<input type="radio" name="q16" value="correct">d. All of the above <br>
+                <input type="radio" name="q16" value="incorrect">a. 17110, 17111 <br>
+				<input type="radio" name="q16" value="correct">b. 17111 <br>
+                <input type="radio" name="q16" value="incorrect">c. 17004 <br>
+				<input type="radio" name="q16" value="incorrect">d. 17111 x 19 <br>
             </div>
 
 			<div class="question">
-                <p><strong>Pregunta 17:</strong>  Which modifiers are appended to E/M codes to report payable services within the global package? </p>
+                <p><strong>Pregunta 17:</strong>  Patient returns to the dermatologist after biopsies were done on several lesions. In discussing the pathology results with the patient, the physician indicated she had a superficial basal cell carcinoma (BCC) on her right cheek and left hand. The physician discussed the different treatment options with the patient and she decided to try cryosurgery to destroy the skin cancers. Informed consent was obtained. The physician noted the measurements of the BCC on the face to be 0.7 cm and the BCC on the left hand to be 1.2 cm prior to destruction.<br>
+				What are the correct CPT codes to report for this example? </p>
                 
-                <input type="radio" name="q17" value="incorrect">a. 24, 26, 51 <br>
-				<input type="radio" name="q17" value="incorrect">b. 24,25, 47 <br>
-                <input type="radio" name="q17" value="correct">c. 24, 25, 57 <br>
-				<input type="radio" name="q17" value="incorrect">d. 24, 26, 57 <br>
+                <input type="radio" name="q17" value="incorrect">a. 17311, 17312 <br>
+				<input type="radio" name="q17" value="incorrect">b. 17000, 17003 <br>
+                <input type="radio" name="q17" value="incorrect">c. 17270, 17280-51 <br>
+				<input type="radio" name="q17" value="correct">d. 17272, 17281-51 <br>
             </div>
 
 			<div class="question">
-                <p><strong>Pregunta 18:</strong>  What is the CMS global period status indicator for endoscopies? </p>
+                <p><strong>Pregunta 18:</strong>  A patient has a squamous cell carcinoma on the tip of the nose. After prepping the patient and site, the physician removes the tumor (first stage) and divides it into seven blocks for examination. Seeing positive margins, he removes a second stage. which he divides into five blocks. The physician again identifies positive margins. He performs a third stage and divides the specimen into three blocks proving to be clear of the skin cancer.<br>
+				What are the correct CPT codes to report for this example? </p>
                 
-                <input type="radio" name="q18" value="correct">a. 000 <br>
-				<input type="radio" name="q18" value="incorrect">b. 010 <br>
-                <input type="radio" name="q18" value="incorrect">c. 030 <br>
-				<input type="radio" name="q18" value="incorrect">d. None of the above <br>
-            </div>
-
-			<p><strong>Section Review 6.4</strong></p>
-			
-			<div class="question">
-                <p><strong>Pregunta 19:</strong>    What are three types of codes printed in the HCPCS Level II code book? </p>
-                
-                <input type="radio" name="q19" value="incorrect">a. Level II Codes, Modifiers, DME Codes <br>
-				<input type="radio" name="q19" value="incorrect">b. Level II Codes, G Codes, Miscellaneous <br>
-                <input type="radio" name="q19" value="correct">c. Miscellaneous Codes, Permanent National Codes, Temporary National Codes <br>
-				<input type="radio" name="q19" value="incorrect">d. Dental Codes, Permanent National Codes, Unlisted Codes <br>
-            </div>
-
-			<div class="question">
-                <p><strong>Pregunta 20:</strong>  How often can HCPCS Level II temporary codes be updated? </p>
-                
-                <input type="radio" name="q20" value="incorrect">a. Once annually <br>
-				<input type="radio" name="q20" value="incorrect">b. Biannually <br>
-                <input type="radio" name="q20" value="correct">c. Quarterly <br>
-				<input type="radio" name="q20" value="incorrect">d. None of the above <br>
+                <input type="radio" name="q18" value="correct">a. 17311, 17312, 17312, 17315, 17315 <br>
+				<input type="radio" name="q18" value="incorrect">b. 17311, 17312, 17312 <br>
+                <input type="radio" name="q18" value="incorrect">c. 11640 x 3 <br>
+				<input type="radio" name="q18" value="incorrect">d. 11440 x 3 <br>
             </div>
 			
 			<div class="question">
-                <p><strong>Pregunta 21:</strong> Which set of HCPCS Level II codes are required for use under the Medicare Outpatient Prospective Payment System? </p>
+                <p><strong>Pregunta 19:</strong>  A patient presents for reduction of her left breast due to atrophy of the breast. After being prepped and draped, the surgeon makes a circular incision above the nipple to indicate where the nipple is to be relocated. Another incision is made around the nipple, and then two more incisions are made from the circular cut above the nipple to fold beneath the breast, which creates a keyhole shaped skitt and breast incision. Skin wedges and tissue are removed until the surgeon is satisfied with the size. Electrocautery was performed on bleeding vessels and the nipple was elevated to its new position and the nipple pedicle was sutured with layered closare. The last incision was repaired with a layered closure as well.<br>
+				What is the correct CPT code to report for this example? </p>
                 
-                <input type="radio" name="q21" value="incorrect">a. A codes <br>
-				<input type="radio" name="q21" value="correct">b. C codes <br>
-                <input type="radio" name="q21" value="incorrect">c. G codes <br>
-				<input type="radio" name="q21" value="incorrect">d. T codes <br>
+                <input type="radio" name="q19" value="incorrect">a. 19325-LT <br>
+				<input type="radio" name="q19" value="correct">b. 19318-LT <br>
+                <input type="radio" name="q19" value="incorrect">c. 19350-1T <br>
+				<input type="radio" name="q19" value="incorrect">d. 19316-LT <br>
             </div>
 
 			<div class="question">
-                <p><strong>Pregunta 22:</strong> Which set of HCPCS Level II codes are considered temporary codes assigned by CMS and reviewed by AMA for inclusion in the CPT? </p>
+                <p><strong>Pregunta 20:</strong> A 32-year-old female is having an excision of a mass in her left breast. The physician makes a curved incision along the inferior and medial aspect of the left areola. A breast nodule, measuring approximately 1 cm in diameter, was identified. It appeared to be benign. It was firm, gray, and discrete. It was completely excised. There was no gross evidence of malignancy. The bleeding was controlled with electrocautery. The skin edges were approximated with a continuous subcuticular 4-0 Vicryl suture. Indermil tissue adhesive was applied to the skin as well as a dry gauze dressing.<br>
+				What is the correct CPT code to report for this example? </p>
                 
-                <input type="radio" name="q22" value="incorrect">a. A codes <br>
-				<input type="radio" name="q22" value="incorrect">b. C codes <br>
-                <input type="radio" name="q22" value="incorrect">c. G codes <br>
-				<input type="radio" name="q22" value="correct">d. J codes <br>
-            </div>
-
-			<div class="question">
-                <p><strong>Pregunta 23:</strong>  Which set of HCPCS Level II codes are used to report injected drugs? </p>
-                
-                <input type="radio" name="q23" value="incorrect">a. A codes <br>
-				<input type="radio" name="q23" value="incorrect">b. C codes <br>
-                <input type="radio" name="q23" value="correct">c. H codes <br>
-				<input type="radio" name="q23" value="incorrect">d. J codes <br>
-            </div>
-
-			<p><strong>Section Review 6.5</strong></p>
-			
-			<div class="question">
-                <p><strong>Pregunta 24:</strong>  Which CPT modifier should you append to a procedure code for a bilateral procedure? </p>
-                
-                <input type="radio" name="q24" value="incorrect">a. 22 <br>
-				<input type="radio" name="q24" value="correct">b. 50  <br>
-                <input type="radio" name="q24" value="incorrect">c. 51 <br>
-				<input type="radio" name="q24" value="incorrect">d. 59 <br>
-            </div>			
-					
-			<div class="question">
-                <p><strong>Pregunta 25:</strong>  What types of modifiers are listed in Appendix A of the CPT code book? </p>
-                
-                <input type="radio" name="q25" value="incorrect">a. CPT, Anesthesia Physical Status Modifiers, Surgical <br>
-				<input type="radio" name="q25" value="correct">b. CPT, ASC, HCPCS, Anesthesia Physical Status Modifiers <br>
-                <input type="radio" name="q25" value="incorrect">c. HCPCS, CPT, Surgical <br>
-				<input type="radio" name="q25" value="incorrect">d. CPT, HCPCS, Category I <br>
-            </div>		
-
-			<div class="question">
-                <p><strong>Pregunta 26:</strong>   Which HCPCS Level II modifier should you append for a new wheelchair purchase? </p>
-                
-                <input type="radio" name="q26" value="incorrect">a. GM <br>
-				<input type="radio" name="q26" value="incorrect">b. HC <br>
-                <input type="radio" name="q26" value="incorrect">c. NR <br>
-				<input type="radio" name="q26" value="correct">d. NU <br>
-            </div>
-			
-			<div class="question">
-                <p><strong>Pregunta 27:</strong>  What modifier do you append to a CPT code if a commercial insurance company requires the patient to acquire a medical consultation from a second physician? </p>
-                
-                <input type="radio" name="q27" value="incorrect">a. 22  <br>
-				<input type="radio" name="q27" value="incorrect">b. 25 <br>
-                <input type="radio" name="q27" value="correct">c. 32 <br>
-				<input type="radio" name="q27" value="incorrect">d.  59 <br>
-            </div>
-			
-			<div class="question">
-                <p><strong>Pregunta 28:</strong>  In which option below is it appropriate to append HCPCS Level II modifiers to CPT procedure codes? </p>
-                
-                <input type="radio" name="q28" value="incorrect">a. Never, HCPCS Level II Modifiers are only appended to HCPCS Level II codes <br>
-				<input type="radio" name="q28" value="correct">b. When specificity is required for eyelids, fingers, toes, and coronary arteries <br>
-                <input type="radio" name="q28" value="incorrect">c. When CPT and HCPCS Level II codes are reported together <br>
-				<input type="radio" name="q28" value="incorrect">d. Always <br>
+                <input type="radio" name="q20" value="incorrect">a. 19120-LT <br>
+				<input type="radio" name="q20" value="incorrect">b. 19125-LT <br>
+                <input type="radio" name="q20" value="correct">c. 19301-LT <br>
+				<input type="radio" name="q20" value="incorrect">d. 19370-LT <br>
             </div>
 			
 			
