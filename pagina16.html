@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">01:10</div> <!-- 70 minutos = 1 horas 10 minutos -->
+
+  <script>
+    let duration = 48 * 60; // 48 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 48 * 60;            // reiniciar a 48 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 7.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> A 25-year-old man complains he has premature hair loss. The provider suspects it is due to stress but is uncertain. Select the ICD-10-CM coding for the hair loss </p>
+                <input type="radio" name="q1" value="correct">a. L64.8 <br>
+                <input type="radio" name="q1" value="incorrect">b. L65.0 <br>
+                <input type="radio" name="q1" value="incorrect">c. L64.8, F43.89 <br>
+			    <input type="radio" name="q1" value="incorrect">d. F43.89 <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  A provider performs a punch biopsy of two pre-cancerous lesions on the patient's back, which he has desermined in be actinic keratosis (AK). Select the ICD-10-CM code for the AK. </p>
+                <input type="radio" name="q2" value="incorrect">a.  D49.2 <br>
+                <input type="radio" name="q2" value="incorrect">b. C44.519 <br>
+		        <input type="radio" name="q2" value="incorrect">c. D23.5 <br>
+                <input type="radio" name="q2" value="correct">d. L57.0 <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> A patient arrives at the hospital from a nursing home with a stage 3 bed sore on his left hip. Select the ICD-10-CM code for the bedsore </p>
+                
+                <input type="radio" name="q3" value="incorrect">a. L89.209 <br>
+			    <input type="radio" name="q3" value="correct">b. L89.223 <br>
+                <input type="radio" name="q3" value="incorrect">c. L97.823 <br>
+				<input type="radio" name="q3" value="incorrect">d. L89.323 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> When coding multiple burns, which is correct? </p>
+                
+                <input type="radio" name="q4" value="correct">a. Sequence first the code reflecting the largest area in tule of nines with this degree of burn. <br>
+				<input type="radio" name="q4" value="incorrect">b. Sequence first the circumstance of the burn occurrence <br>
+                <input type="radio" name="q4" value="correct">c. Sequence first the code reflecting the highest degree of burn. <br>
+				<input type="radio" name="q4" value="incorrect">d. Sequence first the code identifying burns to the head and neck. <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> A man arrives at the ED with a superficial injury to the scalp (length 1 cm) and a deep laceration to the right hand (length 5 cm). Select the ICD-10-CM codes. </p>
+                
+                <input type="radio" name="q5" value="correct">a. S61.411A, S00.00XA <br>
+				<input type="radio" name="q5" value="incorrect">b. S61.412A, S01.01XA <br>
+                <input type="radio" name="q5" value="incorrect">c. S61.432A, S00.01XA <br>
+		        <input type="radio" name="q5" value="incorrect">d. S61.442A, S01.01XA <br>
+            </div>			
+			
+			<p><strong>Section Review 7.2</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  A patient presents to the dermatologist with a suspicious lesion on her left arm and another one on her right arm. After examination, the physician feels these lesions present as highly suspicious and obtains consent to perform punch biopsies on both sites. After prepping the area, the physician injects the sites with Lidocaine 1 percent and .05 percent Epinephrine. A 3 mm punch biopsy of the lesion of the left arm and a 4 mm punch biopsy of the lesion of the right arm is taken. The sites are closed with a simple one-layer closure and the patient is to return in 10 days for suture removal and to discuss the pathology results. The patient tolerated the procedure well. Select the CPT code(s) for this procedure. </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. 10060 <br>
+			    <input type="radio" name="q6" value="correct">b. 11104, 11105 <br>
+                <input type="radio" name="q6" value="incorrect">c. 11400, 11400-59 <br>
+			   	<input type="radio" name="q6" value="incorrect">d. 11600, 11600-59 <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> Patient presents with a cyst on the arm. Upon examination, the physician decides to incise and drain the cyst. The site is prepped, and the physician takes a scalpel and cuts into the cyst. Purulent fluid is extracted from the cyst and a sample of the fluid is sent to the laboratory for evaluation. The wound is irrigated with normal saline and covered with a bandage. The parient is to return in a week to ten days to re-examine the wound. Select the CPT code for this procedure. </p>
+                
+                <input type="radio" name="q7" value="correct">a. 10060 <br>
+			   	<input type="radio" name="q7" value="incorrect">b. 11400 <br>
+                <input type="radio" name="q7" value="incorrect">c. 11106 <br>
+		        <input type="radio" name="q7" value="incorrect">d. 10061 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> A parient presents to the primary cate physician with multiple skin tags. After a complete examination of the skin the provider discusses with the patient the removal of is skin tags located on the patient's neck and shoulder area. Patient consent is obtained, and the provider removes all 18 skin tags by scissoring technique. Select the CPT coding for this procedure. </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. 11201 <br>
+				<input type="radio" name="q8" value="incorrect">b. 11200, 11201-51 <br>
+                <input type="radio" name="q8" value="incorrect">c. 17000 <br>
+				<input type="radio" name="q8" value="correct">d. 11200, 11201 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> A patient presents for tattooing of the nipple and areola of both breasts after undergoing breast reconstruction. The total area for the right breast is 11.5 cm2 and for the left breast of 10.5 cm2. Select the CPT coding for this procedure. </p>
+                
+                <input type="radio" name="q9" value="correct">a. 11921, 11922 <br>
+				<input type="radio" name="q9" value="incorrect">b. 11921-50 <br>
+                <input type="radio" name="q9" value="incorrect">c. 19350 <br>
+				<input type="radio" name="q9" value="incorrect">d. 19120-50 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> A patient presents to the dermatologist with a suspicious lesion of the left cheek. Upon examination, the physician discusses with the patient that the best course of treatment is to remove the lesion by shave technique. Consent is obtained, and the physician preps the area and using an 11-blade scalpel, makes a transverse incision and slices the lesion at the base. The wound is cleaned, and a bandage is placed. The physician indicates the size of the lesion is 1.4 cm. The lesion is sent to pathology for evaluation and the patient is to return in 10 days to discess the findings. Select the CPT code for this procedure. </p>
+                
+                <input type="radio" name="q10" value="correct">a. 11312  <br>
+				<input type="radio" name="q10" value="incorrect">b. 11102 <br>
+                <input type="radio" name="q10" value="incorrect">c. 11642 <br>
+				<input type="radio" name="q10" value="incorrect">d. 11442 <br>
+            </div>				
+
+			<p><strong>Section Review 7.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 11:</strong>  A 22-year-old is treated in the ED for second degree burns on the palm of his right hand caused by grabbing a hot pot handle. The ED physician debrides and dresses the blisters on the palm. TBSA is 4%. What CPT code is reported? </p>
+                
+                <input type="radio" name="q11" value="incorrect">a. 16000 <br>
+				<input type="radio" name="q11" value="correct">b. 16020 <br>
+                <input type="radio" name="q11" value="incorrect">c. 16025 <br>
+				<input type="radio" name="q11" value="incorrect">d. 15002 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> A patient presents to the emergency department with multiple lacerations. After inspection and cleaning of the multiple wounds the physician closes the wounds. The documentation indicates the following: 2.7 cm.complex closure to the right upper abdominal atea, a 1.4 cm complex repair to the right buttock, a 7.4 cm intermediate repair to the right arm, a 3.8 cm intermediate repair in the left cheek, an 8.1 cm intermediate repait to the scalp, and a 2.3 cm simple repair the right lower lip. What are the correct CPT codes to report for this example? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. 13101, 13100-59, 12051-59, 12011-59 <br>
+				<input type="radio" name="q12" value="incorrect">b. 13100, 12035-59, 12052-59, 12013-59 <br>
+                <input type="radio" name="q12" value="incorrect">c. 13101, 12034-59, 13100-59, 12052-59 <br>
+				<input type="radio" name="q12" value="correct">d. 13101, 12035-59, 12052-59, 12011-59 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> <strong>Operative Report</strong><br>
+
+				<strong>Indications for Surgery: </strong> The patient has a suspicious 1.5 cm lesion of the left upper medial thigh. Clinical diagnosis of this lesion in unknown, but due to the appearance, malignancy is a realistic concern. The area is marked for elliptical excision with gross normal margin of 3 mm in relaxed skin tension lines of the respective area and the best guess at the resulting scars was drawn. The patient observed these marks in a mirror to understand the surgery and agreed on the location and we proceeded<br>
+				<strong>Procedure:</strong> The area were infiltrated with local anesthetic. The area was prepped and draped in sterile fashion. The suspicious left upper most medial thigh lesion was excised as drawn, into the subcutaneous fat. This was sent for permanent pathology. The wound was closed in layers using 3.0 Monocryl and 5.0 chromic. The repair measured 5.0 cm. Meticulous homeostasis was achieved using light pressure. The patiest tolerated the procedure well.<br> 
+				What CPT coding is reported for this example? </p>
+                
+                <input type="radio" name="q13" value="incorrect">a. 11106 <br>
+				<input type="radio" name="q13" value="incorrect">b. 11311 <br>
+                <input type="radio" name="q13" value="correct">c. 12032, 11403-51 <br>
+				<input type="radio" name="q13" value="incorrect">d. 12031, 11600-51 <br>
+            </div>
+					
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> <strong>Operative Report:</strong><br>
+
+				<strong>Indications for Surgery:</strong> The patient has a dysplastic nevus on the right upper abdomen. The area is marked for elliptical excision with gross normal margins of 4 to 6 mm in relaxed skin tension lines of the respective area and the best guess at the resulting scars is drawn. The patient observed these marks in a mirror to understand the surgery and agrees on the location and we proceeded.<br>
+				<strong>Procedure:</strong> The area was infiltrated with local anesthetic. The area is prepped and draped in sterile fashion. The dysplastic nevus right upper abdomen lesion measuring 2.2 cm with margins is excised as drawn, into the subcutaneous fat. Suture is used to mark the specimen at its medial tip and labeled 12 o'clock. This is sent for permanent pathology. Meticulous homeostasis is achieved using light pressure. The patient tolerated the procedure well.</b> <br>
+				What is the correct CPT code to report for this example </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. 11603 <br>
+				<input type="radio" name="q14" value="correct">b. 11403 <br>
+                <input type="radio" name="q14" value="incorrect">c. 11401 <br>
+				<input type="radio" name="q14" value="incorrect">d. 11601 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  <strong>Operative Report</strong>
+
+				<strong>Indications for Surgery:</strong> The patient is a 72-year-old male with a biopsy-proven squamous cell carcinoma of his left forearm. With his permission, I marked my planned excision and my best guess at the resultant scar, which included a rhomboid flap repair. The patient observed these markings in a mirror, so he could understand the surgery, and agree on the location; I proceeded. <br>
+				<strong>Description of Procedure:</strong> The patient was given 1 g of IV Ancef. The area was infiltrated with local anesthetic. The forearm was prepped and draped in a sterile fashion. I excised this lesion measuring 1.2 cm diameter as drawn into the subcutaneous fat. A suture was used to mark this specimen at its proximal tip and this was labeled at 12 o'clock. Negative margins were then given. Meticulous hemostasis was achieved using a Bovie cautery. I incised my planned rhomboid flap measuring 2 cm x 2 cm. I elevated the flap with a full-thickness of skin and subcutaneous fat. The total defect size was 5.44 sq cm. The flap was rotated into the defect and the donor site was closed and the flap was inset in layers using 4-0 Monocryl and 5-0 Prolene. Loupe magnification was used throughout the procedure and the patient tolerated the procedure well.<br>
+				
+				What CPT coding is reported for this example? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. 14040 <br>
+				<input type="radio" name="q15" value="incorrect">b. 14020, 11602-51 <br>
+                <input type="radio" name="q15" value="correct">c. 14020 <br>
+				<input type="radio" name="q15" value="incorrect">d. 14021 <br>
+            </div>
+
+			<p><strong>Section Review 7.4 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong> Patient presents to the dermatologist for the removal of warts on his hands. Upon evaluation, it is noted the patient has nine warts on his right hand and 10 on his left hand, all of which he has indicated he would like removed today. After discussion with the patient regarding the destruction method and aftercare the patient agreed to proceed. Using cryosurgery, the physician applied two squirts of liquid nitrogen on each of the warts on his right and left hand. Aftercare instructions were given to the patient's wife. The patient tolerated the procedure well.<br>
+				What CPT coding is reported for this example? </p>
+                
+                <input type="radio" name="q16" value="incorrect">a. 17110, 17111 <br>
+				<input type="radio" name="q16" value="correct">b. 17111 <br>
+                <input type="radio" name="q16" value="incorrect">c. 17004 <br>
+				<input type="radio" name="q16" value="incorrect">d. 17111 x 19 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong>  Patient returns to the dermatologist after biopsies were done on several lesions. In discussing the pathology results with the patient, the physician indicated she had a superficial basal cell carcinoma (BCC) on her right cheek and left hand. The physician discussed the different treatment options with the patient and she decided to try cryosurgery to destroy the skin cancers. Informed consent was obtained. The physician noted the measurements of the BCC on the face to be 0.7 cm and the BCC on the left hand to be 1.2 cm prior to destruction.<br>
+				What are the correct CPT codes to report for this example? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. 17311, 17312 <br>
+				<input type="radio" name="q17" value="incorrect">b. 17000, 17003 <br>
+                <input type="radio" name="q17" value="incorrect">c. 17270, 17280-51 <br>
+				<input type="radio" name="q17" value="correct">d. 17272, 17281-51 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong>  A patient has a squamous cell carcinoma on the tip of the nose. After prepping the patient and site, the physician removes the tumor (first stage) and divides it into seven blocks for examination. Seeing positive margins, he removes a second stage. which he divides into five blocks. The physician again identifies positive margins. He performs a third stage and divides the specimen into three blocks proving to be clear of the skin cancer.<br>
+				What are the correct CPT codes to report for this example? </p>
+                
+                <input type="radio" name="q18" value="correct">a. 17311, 17312, 17312, 17315, 17315 <br>
+				<input type="radio" name="q18" value="incorrect">b. 17311, 17312, 17312 <br>
+                <input type="radio" name="q18" value="incorrect">c. 11640 x 3 <br>
+				<input type="radio" name="q18" value="incorrect">d. 11440 x 3 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong>  A patient presents for reduction of her left breast due to atrophy of the breast. After being prepped and draped, the surgeon makes a circular incision above the nipple to indicate where the nipple is to be relocated. Another incision is made around the nipple, and then two more incisions are made from the circular cut above the nipple to fold beneath the breast, which creates a keyhole shaped skitt and breast incision. Skin wedges and tissue are removed until the surgeon is satisfied with the size. Electrocautery was performed on bleeding vessels and the nipple was elevated to its new position and the nipple pedicle was sutured with layered closare. The last incision was repaired with a layered closure as well.<br>
+				What is the correct CPT code to report for this example? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. 19325-LT <br>
+				<input type="radio" name="q19" value="correct">b. 19318-LT <br>
+                <input type="radio" name="q19" value="incorrect">c. 19350-1T <br>
+				<input type="radio" name="q19" value="incorrect">d. 19316-LT <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 20:</strong> A 32-year-old female is having an excision of a mass in her left breast. The physician makes a curved incision along the inferior and medial aspect of the left areola. A breast nodule, measuring approximately 1 cm in diameter, was identified. It appeared to be benign. It was firm, gray, and discrete. It was completely excised. There was no gross evidence of malignancy. The bleeding was controlled with electrocautery. The skin edges were approximated with a continuous subcuticular 4-0 Vicryl suture. Indermil tissue adhesive was applied to the skin as well as a dry gauze dressing.<br>
+				What is the correct CPT code to report for this example? </p>
+                
+                <input type="radio" name="q20" value="incorrect">a. 19120-LT <br>
+				<input type="radio" name="q20" value="incorrect">b. 19125-LT <br>
+                <input type="radio" name="q20" value="correct">c. 19301-LT <br>
+				<input type="radio" name="q20" value="incorrect">d. 19370-LT <br>
+            </div>
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
