@@ -1,0 +1,283 @@
+2<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">00:48</div> <!-- 48 minutos = 1 horas 10 minutos -->
+
+  <script>
+    let duration = 48 * 60; // 48 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 48 * 60;            // reiniciar a 48 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 8.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> A Colle's fracture la a fracture of what part of the body? </p>
+                <input type="radio" name="q1" value="incorrect">a. Elbow <br>
+                <input type="radio" name="q1" value="correct">b. Wrist <br>
+                <input type="radio" name="q1" value="incorrect">c. Knee <br>
+			    <input type="radio" name="q1" value="incorrect">d. Ankle <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  In the CPT code book. 25000 and 25001 are for incisions in the tendon sheath on the wrist. Code 25000 is for the extensor tendon and 25001 is for the flexor sendon sheath. What is the difference between extension and flexion? </p>
+                <input type="radio" name="q2" value="incorrect">a.  Extension causes bending of the wrist; flexion causes straightening of the wrist. <br>
+                <input type="radio" name="q2" value="correct">b. Extension causes straightening of the wrist; flexion causes hending of the wrist. <br>
+		        <input type="radio" name="q2" value="incorrect">c. Extension causes the wrist to move forward by ritating, flexion causes the wrist to move backward by mitating. <br>
+                <input type="radio" name="q2" value="incorrect">d.  Extension causes the wrist to move backward by rotaring, flexim causes the wrist to move forward by rotating. <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> In the CPT code book, 28400 and 28405 are used when coding a calcaneal fracture. What is the difference between these two codes? </p>
+                
+                <input type="radio" name="q3" value="incorrect">a. One includes internal fixation and one does not. <br>
+			    <input type="radio" name="q3" value="incorrect">b. One is for a foot fracture and one is for an ankle fracture. <br>
+                <input type="radio" name="q3" value="correct">c. One includes manipulation and one does not. <br>
+				<input type="radio" name="q3" value="incorrect">d. One requires surgery and one does not. <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> This type of connective tissue attaches a muscle to a bone: </p>
+                
+                <input type="radio" name="q4" value="incorrect">a. Ligament <br>
+				<input type="radio" name="q4" value="incorrect">b. Vein <br>
+                <input type="radio" name="q4" value="incorrect">c. Vertebra <br>
+				<input type="radio" name="q4" value="correct">d. Tendon <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> Which type of muscles help control movement of the body, maintain posture, and help produce heat? </p>
+                
+                <input type="radio" name="q5" value="correct">a. Striated or skeletal <br>
+				<input type="radio" name="q5" value="incorrect">b.  Smooth or visceral <br>
+                <input type="radio" name="q5" value="incorrect">c. Cardiac <br>
+		        <input type="radio" name="q5" value="incorrect">d. Involuntary <br>
+            </div>			
+			
+			<p><strong>Section Review 8.2</strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  What is the correct 7th character in ICD-10-CM for a healing comminuted fracture of the right fibula, open, type 1? </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. B <br>
+			    <input type="radio" name="q6" value="incorrect">b. D <br>
+                <input type="radio" name="q6" value="incorrect">c. H <br>
+			   	<input type="radio" name="q6" value="correct">d. E <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> What is the correct ICD-10-CM code for a new patient seen for a left-sided nursemaid's elbow? </p>
+                
+                <input type="radio" name="q7" value="incorrect">a. S53.492A <br>
+			   	<input type="radio" name="q7" value="incorrect">b. S53.032S <br>
+                <input type="radio" name="q7" value="incorrect">c. S50.02XA <br>
+		        <input type="radio" name="q7" value="correct">d. S53.032A <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> How would compartment syndrome of the lower extremity caused by an auto accident be listed in the ICD-10-CM Alphabetic Index? </p>
+                
+                <input type="radio" name="q8" value="correct">a. Syndrome/compartment/lower extremity <br>
+				<input type="radio" name="q8" value="incorrect">b. Compartment syndrome/leg <br>
+                <input type="radio" name="q8" value="incorrect">c. Syndrome/compartment/non-traumatic/leg <br>
+				<input type="radio" name="q8" value="incorrect">d. Syndrome/compartment <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> How would you code a new pathological fracture of the right femur due to postmenopausal osteoporosis? </p>
+                
+                <input type="radio" name="q9" value="incorrect">a. M81.0 <br>
+				<input type="radio" name="q9" value="incorrect">b. M80.851A <br>
+                <input type="radio" name="q9" value="correct">c. M80.051A <br>
+				<input type="radio" name="q9" value="incorrect">d. M84.551A <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> What is the code for a traumatic fracture of the fifth metacarpal shaft on the right hand with delayed healing? </p>
+                
+                <input type="radio" name="q10" value="correct">a. S62.306G  <br>
+				<input type="radio" name="q10" value="incorrect">b. S62.326G <br>
+                <input type="radio" name="q10" value="incorrect">c. S62.327D <br>
+				<input type="radio" name="q10" value="incorrect">d. S62.316G <br>
+            </div>				
+
+			<p><strong>Section Review 8.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 11:</strong>  The physician performs arthroscopic meniscus repair with partial medial and lateral repairs. What procedure code is reported? </p>
+                
+                <input type="radio" name="q11" value="correct">a. 29883 <br>
+				<input type="radio" name="q11" value="incorrect">b. 29880 <br>
+                <input type="radio" name="q11" value="incorrect">c. 29882 <br>
+				<input type="radio" name="q11" value="incorrect">d. 27332 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> How should you code an arthroscopic abrasion chondroplasty of the medial femoral condyle? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. 29884 <br>
+				<input type="radio" name="q12" value="incorrect">b. 29862 <br>
+                <input type="radio" name="q12" value="correct">c. 29879 <br>
+				<input type="radio" name="q12" value="incorrect">d. 29860 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> The patient came to the office for a therapeutic injection, left shoulder subacromial space. What procedure code is reported?</p>
+                
+                <input type="radio" name="q13" value="incorrect">a. 20612 <br>
+				<input type="radio" name="q13" value="correct">b. 20610 <br>
+                <input type="radio" name="q13" value="incorrect">c. 20552 <br>
+				<input type="radio" name="q13" value="incorrect">d. 20550 <br>
+            </div>
+					
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> Joe was in a motorcycle accident and fractured his right femur. The surgeon placed an intramedullary locking implant (nail)
+				through a buttock incision. What procedure code is reported? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. 27503-RT <br>
+				<input type="radio" name="q14" value="incorrect">b. 27508-RT <br>
+                <input type="radio" name="q14" value="incorrect">c. 27510-RT <br>
+				<input type="radio" name="q14" value="correct">d. 27506-RT <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  Jeff was skateboarding and crushed the long arm cast (without further injury to the arm) that was placed for a fractured left
+				radius and ulna. Another physician replaces the cast with a short-arm fiberglass cast. What procedure code is reported for
+				the replacement cast? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. 29085 <br>
+				<input type="radio" name="q15" value="incorrect">b. 29065 <br>
+                <input type="radio" name="q15" value="correct">c. 29075 <br>
+				<input type="radio" name="q15" value="incorrect">d. 29125 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong> Mary has pain in her temporomandibular joint. Her doctor decides to manipulate the joint under general anesthesia, and
+				schedules her for this procedure the next day. What procedure code would be reported for the manipulation? </p>
+                
+                <input type="radio" name="q16" value="correct">a. 21073 <br>
+				<input type="radio" name="q16" value="incorrect">b. 21480 <br>
+                <input type="radio" name="q16" value="incorrect">c. 21485 <br>
+				<input type="radio" name="q16" value="incorrect">d. 21060 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong> The patient has developed plantar fasciitis, a painful condition in his heel and the sole of his foot. He has tried using shoe
+				inserts and over-the-counter pain relievers but is still having pain. His physician performs an injection of the tendon sheath
+				on the bottom of his foot. What procedure code is reported? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. 28070 <br>
+				<input type="radio" name="q17" value="correct">b. 20550 <br>
+                <input type="radio" name="q17" value="incorrect">c. 28001 <br>
+				<input type="radio" name="q17" value="incorrect">d. 20553 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong>  Julia tripped and fell down three stairs in her apartment. X-rays show a fracture of the metatarsal bone of her left great toe
+				and the physician treats the fracture with a special orthotic boot. What procedure code is reported? </p>
+                
+                <input type="radio" name="q18" value="incorrect">a. 27752-TA <br>
+				<input type="radio" name="q18" value="incorrect">b. 27786-TA <br>
+                <input type="radio" name="q18" value="correct">c. 28470-TA <br>
+				<input type="radio" name="q18" value="incorrect">d. 27750-TA <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong>  Mrs. Williams has had a bunion on her right foot for many years and is scheduled for surgery to correct this condition. The
+				doctor plans to do a double osteotomy of the metatarsal bone. What procedure code is reported? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. 28296-RT, 28296-RT <br>
+				<input type="radio" name="q19" value="correct">b. 28299-RT <br>
+                <input type="radio" name="q19" value="incorrect">c. 28292-RT <br>
+				<input type="radio" name="q19" value="incorrect">d. 28291-RT <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 20:</strong> Mrs. Smith underwent an arthrodesis of her spine for spinal deformity, posterior approach, segments L3-L5. What procedure
+				code is reported? </p>
+                
+                <input type="radio" name="q20" value="incorrect">a. 22810 <br>
+				<input type="radio" name="q20" value="incorrect">b. 22818 <br>
+                <input type="radio" name="q20" value="incorrect">c. 22802 <br>
+				<input type="radio" name="q20" value="correct">d. 22800 <br>
+            </div>
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
