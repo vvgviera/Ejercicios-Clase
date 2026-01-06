@@ -23,10 +23,10 @@
     }
   </style>
 
-	<div id="timer">00:48</div> <!-- 48 minutos = 1 horas 10 minutos -->
+	<div id="timer">01:12</div> <!-- 72 minutos = 1 horas 12 minutos -->
 
   <script>
-    let duration = 48 * 60; // 48 minutos en segundos
+    let duration = 72 * 60; // 48 minutos en segundos
     let countdown;          
     const timerElement = document.getElementById("timer");
 
@@ -50,7 +50,7 @@
 
     function startTimer() {
       clearInterval(countdown);       // detener cualquier contador previo
-      duration = 48 * 60;            // reiniciar a 48 minutos
+      duration = 72 * 60;            // reiniciar a 72 minutos
       updateTimer();                  // mostrar inmediatamente
       countdown = setInterval(updateTimer, 1000); // arrancar
     }
