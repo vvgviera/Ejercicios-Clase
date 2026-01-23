@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">01:12</div> <!-- 72 minutos = 1 horas 12 minutos -->
+
+  <script>
+    let duration = 72 * 60; // 48 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 72 * 60;            // reiniciar a 72 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 9.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> Where does the exchange of oxygen and carbon dioxide take place within the lungs? </p>
+                <input type="radio" name="q1" value="incorrect">a. Bronchioles <br>
+                <input type="radio" name="q1" value="incorrect">b. Larynx <br>
+                <input type="radio" name="q1" value="correct">c. Alveoli <br>
+			    <input type="radio" name="q1" value="incorrect">d. Windpipe <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  What protects the trachea from food or liquids entering? </p>
+                <input type="radio" name="q2" value="incorrect">a. Larynx <br>
+                <input type="radio" name="q2" value="incorrect">b. Glottis <br>
+		        <input type="radio" name="q2" value="incorrect">c. Voice box <br>
+                <input type="radio" name="q2" value="correct">d. Epiglottis <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> How many lobes are in both lungs combined? </p>
+                
+                <input type="radio" name="q3" value="incorrect">a. 6 <br>
+			    <input type="radio" name="q3" value="incorrect">b. 3 <br>
+                <input type="radio" name="q3" value="incorrect">c. 2 <br>
+				<input type="radio" name="q3" value="correct">d. 5 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> What is the major muscle used during respiration? </p>
+                
+                <input type="radio" name="q4" value="incorrect">a. Intercostal muscles of the ribs <br>
+				<input type="radio" name="q4" value="correct">b. Diaphragm <br>
+                <input type="radio" name="q4" value="incorrect">c. Abdominal muscles <br>
+				<input type="radio" name="q4" value="incorrect">d. Chest wall or pectoral muscles <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> What is also referred to as the "windpipe?" </p>
+                
+                <input type="radio" name="q5" value="incorrect">a. Bronchus <br>
+				<input type="radio" name="q5" value="incorrect">b. Larynx <br>
+                <input type="radio" name="q5" value="correct">c. Trachea <br>
+		        <input type="radio" name="q5" value="incorrect">d. Glottis <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  Which of the following is not one of the four organs of the lymph system? </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. Spleen <br>
+			    <input type="radio" name="q6" value="incorrect">b. Thymus gland <br>
+                <input type="radio" name="q6" value="incorrect">c. Tonsils <br>
+			   	<input type="radio" name="q6" value="correct">d. Bone Marrow <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> What is the term for removal of part of the lymph system? </p>
+                
+                <input type="radio" name="q7" value="incorrect">a. Lymphoma <br>
+			   	<input type="radio" name="q7" value="correct">b. Lymphadenectomy <br>
+                <input type="radio" name="q7" value="incorrect">c. Lymphadenitis <br>
+		        <input type="radio" name="q7" value="incorrect">d. Lymphedema <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> Where is the mediastinum located? </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. Left upper abdominal quadrant <br>
+				<input type="radio" name="q8" value="incorrect">b. Muscle that separates the abdominal and thoracic cavities <br>
+                <input type="radio" name="q8" value="correct">c. In between the two lungs <br>
+				<input type="radio" name="q8" value="incorrect">d. Below the diaphragm <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> What portion of the thoracic cavity lies between the lungs and contains the heart? </p>
+                
+                <input type="radio" name="q9" value="correct">a. Mediastinum <br>
+				<input type="radio" name="q9" value="incorrect">b. Diaphragm <br>
+                <input type="radio" name="q9" value="incorrect">c. Lymphatic channels <br>
+				<input type="radio" name="q9" value="incorrect">d. Bone marrow <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> What is another name for the larynx? </p>
+                
+                <input type="radio" name="q10" value="incorrect">a. Windpipe  <br>
+				<input type="radio" name="q10" value="incorrect">b. Trachea <br>
+                <input type="radio" name="q10" value="correct">c. Voice box <br>
+				<input type="radio" name="q10" value="incorrect">d. Epiglottis <br>
+            </div>				
+
+			<p><strong>Section Review 9.2 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 11:</strong>  What is the ICD-10-CM code selection for a patient with COPD presenting with an acute bronchitis? </p>
+                
+                <input type="radio" name="q11" value="incorrect">a. J44.0 <br>
+				<input type="radio" name="q11" value="incorrect">b. J21.8 <br>
+                <input type="radio" name="q11" value="incorrect">c. J44.9 <br>
+				<input type="radio" name="q11" value="correct">d. J44.0, J20.9 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> What is the ICD-10-CM code for a patient who presents with enlarged tonsils and adenoids for the fourth time in a year? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. J35.03 <br>
+				<input type="radio" name="q12" value="incorrect">b. J35.9 <br>
+                <input type="radio" name="q12" value="correct">c. J35.3 <br>
+				<input type="radio" name="q12" value="incorrect">d. J03.90 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> aWhat is the ICD-10-CM code selection for a patient with whooping cough who presents with pneumonia?</p>
+                
+                <input type="radio" name="q13" value="incorrect">a. J12.9 <br>
+				<input type="radio" name="q13" value="incorrect">b. A37.01 <br>
+                <input type="radio" name="q13" value="correct">c. A37.91 <br>
+				<input type="radio" name="q13" value="incorrect">d. J18.9 <br>
+            </div>
+					
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> What is the ICD-10-CM code for a child with an acute exacerbation of hay fever asthma? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. J45.22 <br>
+				<input type="radio" name="q14" value="correct">b. J45.901 <br>
+                <input type="radio" name="q14" value="incorrect">c. J45.32 <br>
+				<input type="radio" name="q14" value="incorrect">d. J45.902 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  A 20-year-old male presents to the emergency department (ED) with chest pain and shortness of breath. Chest X-ray reveals
+				a pneumothorax. The patient gives a history of no recent trauma; patient smokes two packs of cigarettes a day. The ED
+				physician documents a diagnosis of spontaneous tension pneumothorax. What is the ICD-10-CM code selection? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. S27.0XXA <br>
+				<input type="radio" name="q15" value="incorrect">b. S27.0XXA, Z77.22 <br>
+                <input type="radio" name="q15" value="incorrect">c. J93.0 <br>
+				<input type="radio" name="q15" value="correct">d. J93.0, F17.210 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong>What is the ICD-10-CM code for primary malignant thymoma? </p>
+                
+                <input type="radio" name="q16" value="correct">a. C37 <br>
+				<input type="radio" name="q16" value="incorrect">b. C73 <br>
+                <input type="radio" name="q16" value="incorrect">c. D15.0 <br>
+				<input type="radio" name="q16" value="incorrect">d. D09.8 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong> What is the ICD-10-CM code for acquired lymphedema? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. I88.1 <br>
+				<input type="radio" name="q17" value="correct">b. I89.0 <br>
+                <input type="radio" name="q17" value="incorrect">c. Q82.0 <br>
+				<input type="radio" name="q17" value="incorrect">d. I88.8 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong>  A 4-month-old infant presents to the physician with cold-like symptoms, coughing, and wheezing. The infant is diagnosed
+				with bronchiolitis due to RSV. How is this condition coded? </p>
+                
+                <input type="radio" name="q18" value="correct">a. J21.0 <br>
+				<input type="radio" name="q18" value="incorrect">b. J21.8 <br>
+                <input type="radio" name="q18" value="incorrect">c. J21.0, B97.4 <br>
+				<input type="radio" name="q18" value="incorrect">d. R05.9, B97.4 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong> A patient presents to the physician with persistent stuffiness and facial pain. The physician documents a diagnosis of nasal
+				polyps. What ICD-10-CM code is reported? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. J33.0 <br>
+				<input type="radio" name="q19" value="incorrect">b. J33.8 <br>
+                <input type="radio" name="q19" value="incorrect">c. J33.1 <br>
+				<input type="radio" name="q19" value="correct">d. J33.9 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 20:</strong> A patient with right arm and shoulder pain, and a droopy eyelid is referred to a pulmonologist after the discovery of an
+				abnormality in the right upper lobe on a recent chest X-ray. The pulmonologist orders a CT scan and determines the patient
+				has a Pancoast tumor. What ICD-10-CM code is used to report this? </p>
+                
+                <input type="radio" name="q20" value="incorrect">a. C34.10 <br>
+				<input type="radio" name="q20" value="incorrect">b. C34.12 <br>
+                <input type="radio" name="q20" value="correct">c. C34.11 <br>
+				<input type="radio" name="q20" value="incorrect">d. C34.91 <br>
+            </div>
+
+			<p><strong>Section Review 9.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 21:</strong>  Patient is a mouth-breather. He is diagnosed with inflamed inferior turbinates and a superficial ablation is performed. What CPT code is reported? </p>
+                
+                <input type="radio" name="q21" value="incorrect">a. 30802 <br>
+				<input type="radio" name="q21" value="incorrect">b. 30140 <br>
+                <input type="radio" name="q21" value="correct">c. 30801 <br>
+				<input type="radio" name="q21" value="incorrect">d. 30802-52 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 22:</strong> Which code(s) describe(s) bilateral endoscopic nasal procedure to diagnose breathing problems? </p>
+                
+                <input type="radio" name="q22" value="incorrect">a. 31231-50 <br>
+				<input type="radio" name="q22" value="incorrect">b. 31230-RT,31230-LT <br>
+                <input type="radio" name="q22" value="incorrect">c. 31233 <br>
+				<input type="radio" name="q22" value="correct">d. 31231 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 23:</strong> An indirect endoscopic procedure of the larynx means the larynx is viewed: </p>
+                
+                <input type="radio" name="q23" value="incorrect">a. Directly with a scope <br>
+				<input type="radio" name="q23" value="correct">b. With mirrors <br>
+                <input type="radio" name="q23" value="incorrect">c. Through an open incision <br>
+				<input type="radio" name="q23" value="incorrect">d. Through an open mouth <br>
+            </div>
+					
+			<div class="question">
+                <p><strong>Pregunta 24:</strong> Can bronchoscopy codes be coded together by a physician, and if yes, how? Are multiple procedures reported with modifier 51? </p>
+                
+                <input type="radio" name="q24" value="incorrect">a. No. <br>
+				<input type="radio" name="q24" value="correct">b. Yes: Report multiple procedures with modifier 51 (if required by the payer). <br>
+                <input type="radio" name="q24" value="incorrect">c. Yes: Report distinct procedures with modifier 59. <br>
+				<input type="radio" name="q24" value="incorrect">d. Yes: Report multiple bronchoscopy codes together because no modifier is required. <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 25:</strong>  A thoracotomy procedure was performed for repair of hemorrhage and lung tear. What CPT® code is reported? </p>
+                
+                <input type="radio" name="q25" value="incorrect">a. 32100 <br>
+				<input type="radio" name="q25" value="correct">b. 32110 <br>
+                <input type="radio" name="q25" value="incorrect">c. 32120 <br>
+				<input type="radio" name="q25" value="incorrect">d. 32151 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 26:</strong> Which CPT® code describes a pneumonectomy? </p>
+                
+                <input type="radio" name="q26" value="incorrect">a. 32442 <br>
+				<input type="radio" name="q26" value="correct">b. 32440 <br>
+                <input type="radio" name="q26" value="incorrect">c. 32440-50 <br>
+				<input type="radio" name="q26" value="incorrect">d. 32445 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 27:</strong> Can a diagnostic thoracoscopy be billed with video-assisted thoracoscopic surgery (VATS) under certain circumstances? </p>
+                
+                <input type="radio" name="q27" value="correct">a. No: A diagnostic thoracoscopy is always included in the surgical VATS. <br>
+				<input type="radio" name="q27" value="incorrect">b. No: A surgical VATS is always included in the diagnostic VATS. <br>
+                <input type="radio" name="q27" value="incorrect">c. Yes: Anytime a diagnostic VATS and surgical VATS are performed together. <br>
+				<input type="radio" name="q27" value="incorrect">d. Yes: When a diagnostic biopsy is performed and submitted for pathologic evaluation, resulting in a surgical VATS. <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 28:</strong>  Which CPT® code(s) describes VATS therapeutic wedge resection of the left upper lobe followed by left upper lobectomy? </p>
+                
+                <input type="radio" name="q28" value="incorrect">a. 32480 <br>
+				<input type="radio" name="q28" value="incorrect">b. 32505, 32480 <br>
+                <input type="radio" name="q28" value="incorrect">c. 32663, 32666 <br>
+				<input type="radio" name="q28" value="correct">d. 32663 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 29:</strong>  A patient has a mass in her left axilla that is a suspected recurrence of lymphoma. She has a left axillary node excisional
+				biopsy. The lymph node biopsied is under the pectoralis minor. What CPT® code is reported? </p>
+                
+                <input type="radio" name="q29" value="incorrect">a. 38500 <br>
+				<input type="radio" name="q29" value="incorrect">b. 38562 <br>
+                <input type="radio" name="q29" value="incorrect">c. 38745 <br>
+				<input type="radio" name="q29" value="correct">d. 38525 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 30:</strong> Mrs. A patient with adenocarcinoma of the larynx has developed cervical adenopathy and is undergoing an excisional biopsy of
+				the right cervical node. An incision is made above the clavicle and dissection taken down into the muscle. Blunt dissection
+				was used to work the way down to the node, which was firm and white. The entire node was taken, and the wound was
+				closed. What CPT® code is reported? </p>
+                
+                <input type="radio" name="q30" value="incorrect">a. 38500 <br>
+				<input type="radio" name="q30" value="correct">b. 38510 <br>
+                <input type="radio" name="q30" value="incorrect">c. 38520 <br>
+				<input type="radio" name="q30" value="incorrect">d. 38542 <br>
+            </div>
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
