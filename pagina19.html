@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">00:55</div> <!-- 72 minutos = 1 horas 12 minutos -->
+
+  <script>
+    let duration = 55 * 60; // 55 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 55 * 60;            // reiniciar a 55 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 10.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> The________ is a fist-sized, cone-shaped muscle sitting between the lungs and behind the sternum. </p>
+                <input type="radio" name="q1" value="incorrect">a.  Aortic valve <br>
+                <input type="radio" name="q1" value="correct">b. Heart <br>
+                <input type="radio" name="q1" value="incorrect">c. Capillary bed <br>
+			    <input type="radio" name="q1" value="incorrect">d. Coronary artery <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  What type of circulation refers to the movement of blood through tissues of the heart? </p>
+                <input type="radio" name="q2" value="incorrect">a. Pulmonary <br>
+                <input type="radio" name="q2" value="incorrect">b. Systemic <br>
+		        <input type="radio" name="q2" value="incorrect">c. Arterial <br>
+                <input type="radio" name="q2" value="correct">d. Coronary <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> What term refers to a rapid heartbeat? </p>
+                
+                <input type="radio" name="q3" value="correct">a. Tachycardia <br>
+			    <input type="radio" name="q3" value="incorrect">b. Cardiomegaly <br>
+                <input type="radio" name="q3" value="incorrect">c. Bradycardia <br>
+				<input type="radio" name="q3" value="incorrect">d. Tachypnea <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> Which valves are the semilunar valves? </p>
+                
+                <input type="radio" name="q4" value="incorrect">a. Tricuspid and Aortic <br>
+				<input type="radio" name="q4" value="incorrect">b. Pulmonary and Mitral <br>
+                <input type="radio" name="q4" value="incorrect">c. Tricuspid and Mitral <br>
+				<input type="radio" name="q4" value="correct">d. Pulmonary and Aortic <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> Where can codes relating to the cardiovascular system be found in CPT? </p>
+                
+                <input type="radio" name="q5" value="incorrect">a. 30000s <br>
+				<input type="radio" name="q5" value="incorrect">b. 70000s <br>
+                <input type="radio" name="q5" value="incorrect">c. 90000s <br>
+		        <input type="radio" name="q5" value="correct">d. All the above <br>
+            </div>
+
+			<p><strong>Section Review 10.2 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  A patient presents to his physician's office for a follow-up visit and review of test results. Previously, the patient complained of shortness of breath and chest pain during exercise and the physician ordered an echocardiogram. The physician documents aortic valve stenosis. What ICD-10-CM code is reported? </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. I08.0 <br>
+			    <input type="radio" name="q6" value="incorrect">b. Q23.0 <br>
+                <input type="radio" name="q6" value="correct">c. I35.0 <br>
+			   	<input type="radio" name="q6" value="incorrect">d. I06.0 <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> A patient presents to the ED and is subsequently admitted on the same day diagnosed with an acute anteroapical wall infarction. What ICD-10-CM code is reported? </p>
+                
+                <input type="radio" name="q7" value="incorrect">a. I21.19 <br>
+			   	<input type="radio" name="q7" value="correct">b. I21.09 <br>
+                <input type="radio" name="q7" value="incorrect">c. I22.9 <br>
+		        <input type="radio" name="q7" value="incorrect">d. I21.4 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> A patient is diagnosed as having chronic renal failure with hypertension. He is end stage, receiving dialysis. What ICD-10-CM codes are reported? </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. I10, N18.6, Z99.2 <br>
+				<input type="radio" name="q8" value="incorrect">b. I12.9, N18.6, Z99.2 <br>
+                <input type="radio" name="q8" value="correct">c. I12.0, N18.6, Z99.2 <br>
+				<input type="radio" name="q8" value="incorrect">d. I13.0, N18.6, Z99.2 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> A patient is diagnosed with acute on chronic diastolic congestive heart failure (CHF) Report the ICD-10-CM code(s) </p>
+                
+                <input type="radio" name="q9" value="correct">a. I50.33 <br>
+				<input type="radio" name="q9" value="incorrect">b. I50.31, I50.32 <br>
+                <input type="radio" name="q9" value="incorrect">c. I50.43 <br>
+				<input type="radio" name="q9" value="incorrect">d. I50.32 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> Patient presents to the physician's office after a syncopal episode. An EKG is performed in the office and the patient is diagnosed with a Mobitz type I AV block. What ICD-10-CM code is reported? </p>
+                
+                <input type="radio" name="q10" value="incorrect">a. I44.0  <br>
+				<input type="radio" name="q10" value="incorrect">b. R55 <br>
+                <input type="radio" name="q10" value="correct">c. I44.1 <br>
+				<input type="radio" name="q10" value="incorrect">d. I44.2 <br>
+            </div>				
+
+			<p><strong>Section Review 10.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 11:</strong>  Patient undergoes a 3 venous, 2 arterial CABGs using the saphenous vein, femoropopliteal vein, and the radial artery, harvested by the surgeon performing the grafts. The venous grafts were procured using endoscopic harvesting techniques. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q11" value="incorrect">a. 33534, 33512, 35572 <br>
+				<input type="radio" name="q11" value="correct">b. 33534, 33519, 35572, 35600, 33508 <br>
+                <input type="radio" name="q11" value="incorrect">c. 33514,35572, 35600 <br>
+				<input type="radio" name="q11" value="incorrect">d. 33533, 33521, 35572, 35600, 33508 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> Patient presents for removal and replacement of her permanent dual chamber transvenous pacemaker system (generator and leads). What CPT codes are reported? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. 33213, 33234-51, 33233-51 <br>
+				<input type="radio" name="q12" value="incorrect">b. 33206, 33207-51, 33233-51, 33235-51 <br>
+                <input type="radio" name="q12" value="correct">c. 33235, 33208-51, 33233-51 <br>
+				<input type="radio" name="q12" value="incorrect">d. 33240, 33235-51, 33233-51 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> Patient has mitral valve prolapse. A mitral valve ring is inserted with cardiopulmonary bypass. What CPT™ code is reported?</p>
+                
+                <input type="radio" name="q13" value="correct">a. 33426 <br>
+				<input type="radio" name="q13" value="incorrect">b. 33464 <br>
+                <input type="radio" name="q13" value="incorrect">c. 33425 <br>
+				<input type="radio" name="q13" value="incorrect">d. 33430 <br>
+            </div>
+			<p><strong>Section Review 10.4 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> Catheter advanced from the left femoral artery into the aorta, manipulated into both the left and right renal arteries for imaging. What CPT code(s) is/are reported? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. 36245, 36245-59 <br>
+				<input type="radio" name="q14" value="correct">b. 36252 <br>
+                <input type="radio" name="q14" value="incorrect">c. 36245, 36245-59, 36252 <br>
+				<input type="radio" name="q14" value="incorrect">d. 36251 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  During an inpatient stay, a patient is taken to the cath lab. A cathetes is placed in the aortic arch, right and left vertebral arteries, and right and left common carotids. Imaging with interpretation and report is performed in each location. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. 36247, 36246-59, 36245-59, 36222-50-51, 36226-50-51 <br>
+				<input type="radio" name="q15" value="incorrect">b. 36217, 36216-59, 36215-59, 36218, 36222-50-51, 36226-50-51 <br>
+                <input type="radio" name="q15" value="correct">c. 36226-50, 36222-50-51 <br>
+				<input type="radio" name="q15" value="incorrect">d. 36224-50, 36228-50-51 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong>  A   5-French pigtail catheter was placed in the abdominal aorta and a run-off was performed following injection of 80 cc of contrast. Oblique DSA images of the iliofemoral circulation were performed following two injections, each 15 cc. The catheter was not moved to another position within the aorta for the additional injections. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q16" value="correct">a. 36200, 75630-26 <br>
+				<input type="radio" name="q16" value="incorrect">b. 36215, 36215-59, 75630-26 <br>
+                <input type="radio" name="q16" value="incorrect">c. 36215, 36215-59,36200, 75630-26 <br>
+				<input type="radio" name="q16" value="incorrect">d. 36200, 75716-26 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong> A catheter was advanced into the left and right renal artery and the superior mesenteric artery (SMA), and imaging was performed in all vessels. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q17" value="incorrect">a. 36245-RT, 36245-LT, 36245-59, 36252-59, 75726-26 <br>
+				<input type="radio" name="q17" value="incorrect">b. 36245-RT, 36245-LT-59, 36245-59, 75726-26 <br>
+                <input type="radio" name="q17" value="correct">c. 36252, 36245-59, 75726-26 <br>
+				<input type="radio" name="q17" value="incorrect">d. 36245, 36248 x 2, 75726-26 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong> A catheter is placed at the level of the renal arteries for abdominal aortography and then moved to the level of the bifurcation of the aorta for pelvic angiography, demonstrating stenosis in the left external iliac. The right external iliac, femoral, and popliteal arteries are normal. What CPT codes are reported? </p>
+                
+                <input type="radio" name="q18" value="incorrect">a. 36245, 36245-59, 75630-26 <br>
+				<input type="radio" name="q18" value="incorrect">b. 36245, 36245-59, 75716-26, 75625-26 <br>
+                <input type="radio" name="q18" value="incorrect">c. 36245, 36200, 75716-26 <br>
+				<input type="radio" name="q18" value="correct">d. 36200, 75716-26, 75625-26 <br>
+            </div>
+			
+			<p><strong>Section Review 10.5 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong> Leh and right heart catheterization, selective coronary angiogram, left ventriculogram, ascending aortogram to assess the aortic rout, descending aortogram, right iliac angiogram, Perclose closure. Access is from the right femoral artery and right femoral vein. What CPT codes are reported for the physician's services in a facility? </p>
+                
+                <input type="radio" name="q19" value="incorrect">a. 53454-26, 93565, 75625-26 <br>
+				<input type="radio" name="q19" value="incorrect">b. 93458-26, 93567, 75600-26, 75625-26, 75710-RT <br>
+                <input type="radio" name="q19" value="correct">c. 93460-26, 93567 <br>
+				<input type="radio" name="q19" value="incorrect">d. 93460, 93567, 75600-26, 75625-26, 75710-RT <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 20:</strong> Angioplasty of the diagonal branch with intravascular ultrasound (IVUS). What CPT codes(a) should be reported? </p>
+                
+                <input type="radio" name="q20" value="correct">a. 92920-LD, 92978-26 <br>
+				<input type="radio" name="q20" value="incorrect">b. 92920-LC, 92978-26 <br>
+                <input type="radio" name="q20" value="incorrect">c. 92920-26, 92979-26 <br>
+				<input type="radio" name="q20" value="incorrect">d. 92920-LC <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 21:</strong> A patient presents for a cardiac stress test at the hospital. The same physician supervises the test, interprets the study, and documents the official report. What CPT code() should be reported for the physician who is not employed by the hospital </p>
+                
+                <input type="radio" name="q21" value="incorrect">a. 93015 <br>
+				<input type="radio" name="q21" value="incorrect">b. 93015-26 <br>
+                <input type="radio" name="q21" value="incorrect">c. 93016, 93017, 93018 <br>
+				<input type="radio" name="q21" value="correct">d. 93016, 93018 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 22:</strong>  The EP specialist documented that a comprehensive electrophysiologic evaluation was performed in the hospital, including induction of arrhythmia, right atrial pacing, and bundle of His recording. The specialist documented the study and wrote a report. What CPT code(s) should be reported? </p>
+                
+                <input type="radio" name="q22" value="incorrect">a. 93619 <br>
+				<input type="radio" name="q22" value="incorrect">b. 93620-26 <br>
+                <input type="radio" name="q22" value="correct">c. 93618-26, 93610-26, 93600-26 <br>
+				<input type="radio" name="q22" value="incorrect">d. 93620-26, 93621 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 23:</strong> A complete transthoracic echocardiography (TTE) was performed with spectral Doppler and color flow. For the global service. what CPT code(s) should be reported? </p>
+                
+                <input type="radio" name="q23" value="incorrect">a. 93307, 93320, 93325 <br>
+				<input type="radio" name="q23" value="correct">b. 93306 <br>
+                <input type="radio" name="q23" value="incorrect">c. 93312, 93320, 93325 <br>
+				<input type="radio" name="q23" value="incorrect">d. 93312 <br>
+            </div>
+			
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
