@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Estilo del temporizador en la esquina superior derecha */
+    #timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+
+	<div id="timer">00:48</div> <!-- 48 minutos = 0 horas 48 minutos -->
+
+  <script>
+    let duration = 48 * 60; // 48 minutos en segundos
+    let countdown;          
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      let hours = Math.floor(duration / 3600);
+      let minutes = Math.floor((duration % 3600) / 60);
+
+      // Mostrar en formato HH:MM
+      timerElement.textContent = 
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0');
+
+      if (duration <= 0) {
+        clearInterval(countdown);   // detener el temporizador
+        timerElement.textContent = "00:00"; // mostrar fin limpio
+        evaluateQuiz();             // ejecutar tu función
+        return;
+      }
+      duration--;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);       // detener cualquier contador previo
+      duration = 48 * 60;            // reiniciar a 48 minutos
+      updateTimer();                  // mostrar inmediatamente
+      countdown = setInterval(updateTimer, 1000); // arrancar
+    }
+
+    // Ejemplo de función evaluateQuiz (reemplaza con tu lógica real)
+    function evaluateQuiz() {
+      alert("¡Tiempo terminado! Se está evaluando el quiz...");
+      // Aquí va tu código de evaluación real
+    }
+
+    // Iniciar el temporizador al cargar la página
+    startTimer();
+  </script>
+
+	
+<body>
+    <div class="container">
+        <h1>Ejercicios CPC</h1>
+        <form id="quizForm">
+			
+			<p><strong>Section Review 11.1</strong></p>
+			
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> 1. The suffix meaning artificial or surgical opening: </p>
+                <input type="radio" name="q1" value="incorrect">a. -ectasis <br>
+                <input type="radio" name="q1" value="correct">b. -stomy <br>
+                <input type="radio" name="q1" value="incorrect">c. -cele <br>
+			    <input type="radio" name="q1" value="incorrect">d. -lysis <br>
+            </div>
+			
+            <div class="question">
+                <p><strong>Pregunta 2:</strong>  The prefix meaning lip: </p>
+                <input type="radio" name="q2" value="incorrect">a. an/o <br>
+                <input type="radio" name="q2" value="incorrect">b. cec/o <br>
+		        <input type="radio" name="q2" value="incorrect">c. cheil/o <br>
+                <input type="radio" name="q2" value="correct">d. col/o <br>
+				
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 3:</strong> What is the function of the gallbladder? </p>
+                
+                <input type="radio" name="q3" value="incorrect">a. It plays a role in maintaining glucose levels in the blood. <br>
+			    <input type="radio" name="q3" value="correct">b.  It conveys and stores bile. <br>
+                <input type="radio" name="q3" value="incorrect">c. It breaks down and stores waste products. <br>
+				<input type="radio" name="q3" value="incorrect">d. It produces acidic juices for digestion. <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 4:</strong> Name the three sections of the small intestine. </p>
+                
+                <input type="radio" name="q4" value="incorrect">a. Sigmoid, rectum, ilium <br>
+				<input type="radio" name="q4" value="incorrect">b. Jejunum, duodenum, flium <br>
+                <input type="radio" name="q4" value="incorrect">c. Cecum, jejunum, ileum <br>
+				<input type="radio" name="q4" value="correct">d. Duodenum, jejunum, ileum <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 5:</strong> What is the name of the portion of the large intestine that runs horizontally across the abdomen? </p>
+                
+                <input type="radio" name="q5" value="incorrect">a. Sigmoid colon <br>
+				<input type="radio" name="q5" value="correct">b. Transverse colon <br>
+                <input type="radio" name="q5" value="incorrect">c. Descending colon <br>
+		        <input type="radio" name="q5" value="incorrect">d. Ascending colon <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 6:</strong>  What organ in the human body has the capability to regenerate? </p>
+                
+                <input type="radio" name="q6" value="incorrect">a. Pancreas <br>
+			    <input type="radio" name="q6" value="incorrect">b. Kidney <br>
+                <input type="radio" name="q6" value="correct">c. Liver <br>
+			   	<input type="radio" name="q6" value="incorrect">d. Intestine <br>
+            </div>			
+			
+			<div class="question">
+                <p><strong>Pregunta 7:</strong> What are the two processes of digestion? </p>
+                
+                <input type="radio" name="q7" value="correct">a. Mechanical and chemical <br>
+			   	<input type="radio" name="q7" value="incorrect">b. Chewing and absorption <br>
+                <input type="radio" name="q7" value="incorrect">c. Ingestion and defecation <br>
+		        <input type="radio" name="q7" value="incorrect">d. Secretion and propulsion <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 8:</strong> What are the three categories of teeth? </p>
+                
+                <input type="radio" name="q8" value="incorrect">a. Enamel, Root, Crown <br>
+				<input type="radio" name="q8" value="correct">b. Incisors, Cuspids, Molars <br>
+                <input type="radio" name="q8" value="incorrect">c. Baby teeth, Adolescent teeth, Wisdom teeth <br>
+				<input type="radio" name="q8" value="incorrect">d. There are not three categories of teeth <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 9:</strong> Approximately how long is the large intestine in normal anatomy? </p>
+                
+                <input type="radio" name="q9" value="incorrect">a. 6 ft. long <br>
+				<input type="radio" name="q9" value="incorrect">b. 9 ft. long <br>
+                <input type="radio" name="q9" value="incorrect">c. 3 ft. long <br>
+				<input type="radio" name="q9" value="correct">d. 5 ft. long <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 10:</strong> How many lobes are in the liver? </p>
+                
+                <input type="radio" name="q10" value="correct">a. 4 lobes  <br>
+				<input type="radio" name="q10" value="incorrect">b. 3 lobes <br>
+                <input type="radio" name="q10" value="incorrect">c. 2 lobes <br>
+				<input type="radio" name="q10" value="incorrect">d. 5 lobes <br>
+            </div>				
+
+			<p><strong>Section Review 11.2 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 11:</strong>  A 42-year-old patient visits his doctor for chest pain and a dry cough lasting for two months. After evaluating the patient, the physician states the patient has GERD. What is/are the correct diagnosis code(s)? </p>
+                
+                <input type="radio" name="q11" value="incorrect">a. K21.00 <br>
+				<input type="radio" name="q11" value="correct">b. K21.9 <br>
+                <input type="radio" name="q11" value="incorrect">c. K63.9, R05.9 <br>
+				<input type="radio" name="q11" value="incorrect">d. R07.9, R05.9 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 12:</strong> A 28-year-old female has constant abdominal pain and diarrhea. The provider runs blood tests and takes a stool sample. A colonoscopy with biopsy is performed to rule out ulcerative colitis. The provider determines the patient has IBS. What is/are the correct diagnosis code(s)? </p>
+                
+                <input type="radio" name="q12" value="incorrect">a. K22.0 <br>
+				<input type="radio" name="q12" value="incorrect">b. K58.0, R10.9, R19.7 <br>
+                <input type="radio" name="q12" value="incorrect">c. K51.90, K58.0 <br>
+				<input type="radio" name="q12" value="correct">d. K58.0 <br>
+            </div>
+							
+			<div class="question">
+                <p><strong>Pregunta 13:</strong> A patient with a large prolapsed hemorrhoid arrives at the Emergency Department. After multiple attempts, the provider is unable to reduce it. The physician applies granulated sugar to the hemorrhoid and is then able to reduce the hemorrhoid. What is the correct diagnosis code? </p>
+                
+                <input type="radio" name="q13" value="incorrect">a. K64.4 <br>
+				<input type="radio" name="q13" value="incorrect">b. K64.0 <br>
+                <input type="radio" name="q13" value="correct">c. K64.8 <br>
+				<input type="radio" name="q13" value="incorrect">d. K64.5 <br>
+            </div>		
+			
+			<div class="question">
+                <p><strong>Pregunta 14:</strong> A patient was seen in the outpatient GI lab of the hospital for rectal bleeding. A colonoscopy revealed three polyps in the transverse colon. The polyps were removed by snare technique and determined to be benign. What is the correct diagnosis code for this procedure? </p>
+                
+                <input type="radio" name="q14" value="incorrect">a. K63.5 <br>
+				<input type="radio" name="q14" value="correct">b. D12.3 <br>
+                <input type="radio" name="q14" value="incorrect">c. K92.1 <br>
+				<input type="radio" name="q14" value="incorrect">d. K62.5 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 15:</strong>  The patient is a 65-year-old female with type 2 diabetes. She is seen today by her primary care physician for extreme abdominal bloating and discomfort after eating. The patient also complains of constant heartburn. This occurs frequently and is not relieved by anything the patient has tried. The patient recorded her blood sugar this morning as 178. Her A1C taken in the office was 8.2. The physician diagnoses gastroparesis due to the patient's diabetes. Code the ICD-10-CM diagnosis(es). </p>
+                
+                <input type="radio" name="q15" value="incorrect">a. E10.43 <br>
+				<input type="radio" name="q15" value="incorrect">b. K31.84 <br>
+                <input type="radio" name="q15" value="incorrect">c. E11.43 <br>
+				<input type="radio" name="q15" value="correct">d. E11.43, K31.84 <br>
+            </div>
+
+			<p><strong>Section Review 11.3 </strong></p>
+			
+			<div class="question">
+                <p><strong>Pregunta 16:</strong> What CPT coding is reported for a peritoneoscopy with laparoscopic partial colectomy and anastomosis? </p>
+                
+                <input type="radio" name="q16" value="incorrect">a. 44140 <br>
+				<input type="radio" name="q16" value="correct">b. 44204 <br>
+                <input type="radio" name="q16" value="incorrect">c. 49320, 44140 <br>
+				<input type="radio" name="q16" value="incorrect">d. 49320, 44204 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 17:</strong> What CPT code is reported for an intraoral incision and drainage of a hematoma of the tongue, submandibular space? </p>
+                
+                <input type="radio" name="q17" value="correct">a. 41008 <br>
+				<input type="radio" name="q17" value="incorrect">b. 41009 <br>
+                <input type="radio" name="q17" value="incorrect">c. 41015 <br>
+				<input type="radio" name="q17" value="incorrect">d. 41017 <br>
+            </div>
+
+			<div class="question">
+                <p><strong>Pregunta 18:</strong> What CPT code is reported for a proximal subtotal pancreatectomy, with total duodenectomy, partial gastrectomy, choledochoenterostomy, and gastrojejunostomy, with pancreatojejunostomy? </p>
+                
+                <input type="radio" name="q18" value="correct">a. 48150 <br>
+				<input type="radio" name="q18" value="incorrect">b. 48152 <br>
+                <input type="radio" name="q18" value="incorrect">c. 48153 <br>
+				<input type="radio" name="q18" value="incorrect">d. 48154 <br>
+            </div>					
+			
+			<div class="question">
+                <p><strong>Pregunta 19:</strong> A 43-year-old male has a chronic posterior anal fissure. The posterior anal fissure was excised down to the internal sphincter muscle. Which CPT code is reported? </p>
+                
+                <input type="radio" name="q19" value="correct">a. 46200 <br>
+				<input type="radio" name="q19" value="incorrect">b. 46261 <br>
+                <input type="radio" name="q19" value="incorrect">c. 46270 <br>
+				<input type="radio" name="q19" value="incorrect">d. 46275 <br>
+            </div>
+			
+			<div class="question">
+                <p><strong>Pregunta 20:</strong>  A55-year-old patient underwent a repair of an initial left inguinal hernia. An incision was made at the groin. A hernia sac was readily identified and cleared from the surrounding tissue, inverted into the preperitoneal space, and plugged. Mesh was tacked to the surrounding muscle layers and then placed over the entire floor. What CPT code(s) is/are reported? </p>
+                
+                <input type="radio" name="q20" value="inncorrect">a. 49500-LT <br>
+				<input type="radio" name="q20" value="correct">b. 49505-LT <br>
+                <input type="radio" name="q20" value="incorrect">c. 49507-LT <br>
+				<input type="radio" name="q20" value="incorrect">d. 49630-LT <br>
+            </div>					
+			
+          
+		<button type="button" onclick="limpiarRadios()">Limpiar y comenzar</button> <br>
+			<button type="button" onclick="highlightAndSelectCorrect()">Ver respuestas correctas</button>
+        </form>
+			
+		<!-- Modal -->
+			<div id="resultModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+				<p id="modalContent"></p>
+				<button onclick="closeModal()">Aceptar</button>
+			</div>
+        <div id="result"></div>
+   </div>  
+    <script src="script.js"></script>
+</body>
+</html>
